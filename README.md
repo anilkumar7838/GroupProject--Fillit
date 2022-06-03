@@ -2,8 +2,8 @@
 
 ## Folder Structure
 
-- *Fillit_ui*: Front-end part of webapp
-- *Fillit_backend*: Back-end part of webapp
+- *Fillit_ui* :  Front-end part of webapp
+- *Fillit_backend* :  Back-end part of webapp
 
 
 ## Installation
