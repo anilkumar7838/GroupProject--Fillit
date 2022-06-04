@@ -11,8 +11,7 @@ import LockIcon from "@mui/icons-material/Lock";
 import { IconButton } from "@mui/material";
 import { Button } from "@mui/material";
 
-const MyFormsCenterPage = () => {
-  const count = 1;
+const CardBox = () => {
   const Responses = 5;
   const [dropDownShow, setdropDownShow] = useState(false);
   const [LockState, setLockState] = useState(true);
@@ -24,11 +23,96 @@ const MyFormsCenterPage = () => {
   };
 
   return (
+    <div className='myform_flexrow_btm'>
+      <div className='myforms_lower'>
+        <div>
+          <div>
+            <span style={{ fontWeight: "bold" }}>E-commerce Form</span>
+            <span style={{ float: "right" }}>
+              <IconButton onClick={handleLock}>
+                {LockState ? (
+                  <LockIcon fontSize='small' />
+                ) : (
+                  <LockOpenIcon fontSize='medium' />
+                )}
+              </IconButton>
+            </span>
+          </div>
+          <div style={{ fontSize: "15px", color: "lightgray" }}>22/05/22</div>
+        </div>
+        <div className='myforms_lwr_lft_bottom'>
+          <div className='myforms_response_box'>
+            <span>Responses: {Responses}</span>
+          </div>
+          <div className='myforms_dropdown'>
+            <IconButton onClick={handleDropDown} style={{ cursor: "pointer" }}>
+              <MoreVertIcon />
+            </IconButton>
+
+            <div
+              className={
+                dropDownShow
+                  ? "myforms_lower_rght_dropdown myforms_show"
+                  : "myforms_lower_rght_dropdown"
+              }
+            >
+              <div className='myforms_drop_down_content'>
+                <>
+                  <IconButton
+                    style={{
+                      justifyContent: "flex-start",
+                      fontSize: "20px",
+                    }}
+                  >
+                    <EditIcon fontSize='small' />{" "}
+                    <span style={{ marginLeft: "10px", fontSize: "10px" }}>
+                      Edit
+                    </span>
+                  </IconButton>
+                </>
+                <>
+                  <IconButton
+                    style={{
+                      justifyContent: "flex-start",
+                      fontSize: "20px",
+                    }}
+                  >
+                    <ShareIcon fontSize='small' />{" "}
+                    <span style={{ marginLeft: "10px", fontSize: "10px" }}>
+                      Share
+                    </span>
+                  </IconButton>
+                </>
+                <>
+                  <IconButton
+                    style={{
+                      justifyContent: "flex-start",
+                      fontSize: "20px",
+                    }}
+                  >
+                    <DeleteIcon fontSize='small' />{" "}
+                    <span style={{ marginLeft: "10px", fontSize: "10px" }}>
+                      Delete
+                    </span>
+                  </IconButton>
+                </>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const MyFormsCenterPage = () => {
+  const count = 4;
+  return (
     <>
       <div className='myform_container'>
         <div className='myform_flexrow_upr'>
           <div className='myform_upper_left'>
-            <h3>My Forms</h3>
+            <h2>My Forms</h2>
             <div style={{ color: "grey" }}>Total Count : {count}</div>
           </div>
           <div className='myforms_upper_right'>
@@ -52,89 +136,21 @@ const MyFormsCenterPage = () => {
             </Button>
           </div>
         </div>
-        <div className='myform_flexrow_btm'>
-          <div className='myforms_lower'>
-            <div>
-              <div>
-                <span style={{ fontWeight: "bold" }}>E-commerce Form</span>
-                <span style={{ float: "right" }}>
-                  <IconButton onClick={handleLock}>
-                    {LockState ? (
-                      <LockIcon fontSize='small' />
-                    ) : (
-                      <LockOpenIcon fontSize='medium' />
-                    )}
-                  </IconButton>
-                </span>
-              </div>
-              <div style={{ fontSize: "15px", color: "lightgray" }}>
-                22/05/22
-              </div>
-            </div>
-            <div className='myforms_lwr_lft_bottom'>
-              <div className='myforms_response_box'>
-                <span>Responses: {Responses}</span>
-              </div>
-              <div className='myforms_dropdown'>
-                <IconButton
-                  onClick={handleDropDown}
-                  style={{ cursor: "pointer" }}
-                >
-                  <MoreVertIcon />
-                </IconButton>
-
-                <div
-                  className={
-                    dropDownShow
-                      ? "myforms_lower_rght_dropdown myforms_show"
-                      : "myforms_lower_rght_dropdown"
-                  }
-                >
-                  <div className='myforms_drop_down_content'>
-                    <>
-                      <IconButton
-                        style={{
-                          justifyContent: "flex-start",
-                          fontSize: "20px",
-                        }}
-                      >
-                        <EditIcon fontSize='small' />{" "}
-                        <span style={{ marginLeft: "10px", fontSize: "10px" }}>
-                          Edit
-                        </span>
-                      </IconButton>
-                    </>
-                    <>
-                      <IconButton
-                        style={{
-                          justifyContent: "flex-start",
-                          fontSize: "20px",
-                        }}
-                      >
-                        <ShareIcon fontSize='small' />{" "}
-                        <span style={{ marginLeft: "10px", fontSize: "10px" }}>
-                          Share
-                        </span>
-                      </IconButton>
-                    </>
-                    <>
-                      <IconButton
-                        style={{
-                          justifyContent: "flex-start",
-                          fontSize: "20px",
-                        }}
-                      >
-                        <DeleteIcon fontSize='small' />{" "}
-                        <span style={{ marginLeft: "10px", fontSize: "10px" }}>
-                          Delete
-                        </span>
-                      </IconButton>
-                    </>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "flex-start",
+          }}
+        >
+          <CardBox />
+          <CardBox />
+          <CardBox />
+          <CardBox />
+          <CardBox />
+          <CardBox />
+          <CardBox />
+          <CardBox />
         </div>
       </div>
     </>

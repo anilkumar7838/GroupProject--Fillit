@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(232, 232, 232);
+  background-color: rgba(239, 239, 239, 0.99);
 }
 .myform_container {
   display: inline-flex;
@@ -19,6 +19,13 @@ body {
   .myform_flexrow_upr {
     flex-direction: column;
   }
+}
+.myform_upper_left > h2 {
+  font-weight: bold;
+  color: #000000;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  text-decoration-line: underline;
+  margin-bottom: 5px;
 }
 .myform_flexrow_upr {
   display: flex;
