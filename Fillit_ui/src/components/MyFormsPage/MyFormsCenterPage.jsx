@@ -11,10 +11,9 @@ import LockIcon from "@mui/icons-material/Lock";
 import { IconButton } from "@mui/material";
 import { Button } from "@mui/material";
 
-const CardBox = () => {
-  const Responses = 5;
+const CardBox = ({ name, lock, responses, date }) => {
   const [dropDownShow, setdropDownShow] = useState(false);
-  const [LockState, setLockState] = useState(true);
+  const [LockState, setLockState] = useState(lock);
   const handleLock = () => {
     return setLockState(!LockState);
   };
@@ -27,7 +26,7 @@ const CardBox = () => {
       <div className='myforms_lower'>
         <div>
           <div>
-            <span style={{ fontWeight: "bold" }}>E-commerce Form</span>
+            <span style={{ fontWeight: "bold" }}>{name}</span>
             <span style={{ float: "right" }}>
               <IconButton onClick={handleLock}>
                 {LockState ? (
@@ -38,11 +37,11 @@ const CardBox = () => {
               </IconButton>
             </span>
           </div>
-          <div style={{ fontSize: "15px", color: "lightgray" }}>22/05/22</div>
+          <div style={{ fontSize: "15px", color: "lightgray" }}>{date}</div>
         </div>
         <div className='myforms_lwr_lft_bottom'>
           <div className='myforms_response_box'>
-            <span>Responses: {Responses}</span>
+            <span>Responses: {responses}</span>
           </div>
           <div className='myforms_dropdown'>
             <IconButton onClick={handleDropDown} style={{ cursor: "pointer" }}>
@@ -105,8 +104,11 @@ const CardBox = () => {
   );
 };
 
-const MyFormsCenterPage = () => {
-  const count = 4;
+const MyFormsCenterPage = (props) => {
+  console.log(props.data.length);
+  console.log(props.data);
+
+  const count = props.data.length;
   return (
     <>
       <div className='myform_container'>
@@ -143,14 +145,17 @@ const MyFormsCenterPage = () => {
             justifyContent: "flex-start",
           }}
         >
-          <CardBox />
-          <CardBox />
-          <CardBox />
-          <CardBox />
-          <CardBox />
-          <CardBox />
-          <CardBox />
-          <CardBox />
+          {props.data.map((instant) => {
+            return (
+              <CardBox
+                key={instant.id}
+                name={instant.Name}
+                date={instant.date}
+                responses={instant.responses}
+                lock={instant.lock}
+              />
+            );
+          })}
         </div>
       </div>
     </>
