@@ -1,0 +1,109 @@
+body {
+  background-color: rgba(239, 239, 239, 0.99);
+}
+.myform_container {
+  display: inline-flex;
+  flex-direction: column;
+  margin: 20px;
+  align-items: flex-start;
+}
+
+@media only screen and (max-width: 600px) {
+  .myform_flexrow_btm {
+    flex-direction: column;
+    justify-content: space-between;
+    height: fit-content;
+  }
+}
+@media only screen and (max-width: 452px) {
+  .myform_flexrow_upr {
+    flex-direction: column;
+  }
+}
+.myform_upper_left > h2 {
+  font-weight: bold;
+  color: #000000;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  text-decoration-line: underline;
+  margin-bottom: 5px;
+}
+.myform_flexrow_upr {
+  display: flex;
+  margin: 10px;
+
+  padding: 10px;
+}
+.myform_flexrow_btm {
+  display: flex;
+  margin: 2px 0px 5px 0px;
+  padding: 3px;
+}
+.myforms_upper_right {
+  margin: 0rem 1rem;
+}
+.myforms_lower {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0rem 1rem;
+  background-color: rgb(255, 255, 255);
+  padding: 15px;
+
+  min-width: 180px;
+  min-height: 129px;
+  width: 25vw;
+  height: 20vh;
+  border-radius: 10px;
+  box-shadow: 2px 5px #a82b2b;
+}
+.myforms_icon_btn {
+  background-color: white;
+  margin: 0px 5px 0px 5px;
+}
+.myforms_icon_btn:hover {
+  background-color: rgb(187, 187, 187);
+}
+.myforms_icon {
+  font-size: 25px;
+}
+.myforms_icon:hover {
+  color: rgb(232, 3, 3);
+}
+.myforms_lwr_lft_bottom {
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.myforms_response_box {
+  border: 1px solid black;
+  border-radius: 10px;
+  width: fit-content;
+  padding: 10px;
+}
+.myforms_dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.myforms_lower_rght_dropdown {
+  display: none;
+  position: absolute;
+  padding: 1px;
+  background-color: #ffffff;
+  min-width: 100px;
+  border-radius: 15px;
+  width: max-content;
+  box-shadow: 5px 5px 4px 1px rgb(0 0 0 / 20%);
+  z-index: 1;
+  right: 0;
+}
+.myforms_show {
+  display: block;
+}
+.myforms_drop_down_content {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
