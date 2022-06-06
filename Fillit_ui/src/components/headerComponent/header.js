@@ -1,43 +1,80 @@
-import React from 'react'
-import "./header.css"
-import SearchIcon from "@mui/icons-material/Search"
-import AppIcon from "@mui/icons-material/Apps"
-import { IconButton } from '@mui/material'
-import Avatar from "@mui/material/Avatar"
-import AvatarImg from '../../assets/image/user-Img/AnilProfile.jpeg'
-import Img from '../../assets/image/header_img.png'
-import Sidebar from '../sidebarComponent/sidebar'
+import React, { useState } from "react";
+import "../BodyComponent/Mainbody.css";
+import { Link } from "react-router-dom";
+import ClickAwayListener from "@mui/base/ClickAwayListener";
 
+import HomeIcon from "@mui/icons-material/Home";
+import InfoIcon from "@mui/icons-material/Info";
+import RoomServiceIcon from "@mui/icons-material/RoomService";
+import CallIcon from "@mui/icons-material/Call";
+import WorkspacesIcon from "@mui/icons-material/Workspaces";
 
-const header = () => {
-    return (
-        <>
-          <div className="header">
-            <div className="header_info">
-                <Sidebar />
-                <img src={Img} id="header_img" alt="failed-to-fetch"/>
-                <div className="info">
-                  Forms
-                </div>
-            </div>  
-            <div className="header_search">
-              <IconButton>
-                <SearchIcon/>
-              </IconButton>
-                <input type="text" name="search" placeholder='search' />
-            </div>  
-            <div className="header_right">
-              <IconButton>
-                <AppIcon/>
-              </IconButton>
-              <IconButton>
-                <Avatar src={AvatarImg} alt="failed-to-fetch"/>
-              </IconButton>
-            </div>  
+const Header = () => {
+  const [navbar, setNavbar] = useState(false);
+  const [sidebar, setSidebar] = useState(false);
 
+  const sidebarHandle = () => {
+    setSidebar(!sidebar);
+  };
+  const handleClickAway = () => {
+    return setSidebar(false);
+  };
+  const changeNav = () => {
+    if (window.scrollY >= 20) {
+      setNavbar(true);
+    } else {
+      setNavbar(false);
+    }
+  };
+
+  window.addEventListener("scroll", changeNav);
+
+  return (
+    <>
+      <nav className={navbar ? "navbar sticky" : "navbar"}>
+        <div className="inner-width">
+          <div className="mainHeading">
+            <Link to="/" className="logo"></Link>
+            <h1>FILL-IT</h1>
           </div>
-        </>
-    )
-}
+          <ClickAwayListener onClickAway={handleClickAway}>
+          <div>
+            <button
+              onClick={sidebarHandle}
+              className={sidebar ? "menu-toggler active" : "menu-toggler"}
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+            <div className={sidebar ? "navbar-menu active" : "navbar-menu"}>
+              <Link className="navlink" to="/">
+                <HomeIcon className="navicon" />
+                Home
+              </Link>
+              <Link className="navlink" to="/">
+                <InfoIcon className="navicon" />
+                About
+              </Link>
+              <Link className="navlink" to="/">
+                <RoomServiceIcon className="navicon" />
+                Services
+              </Link>
+              <Link className="navlink" to="/">
+                <WorkspacesIcon className="navicon" />
+                Works
+              </Link>
+              <Link className="navlink" to="/">
+                <CallIcon className="navicon" />
+                Contact
+              </Link>
+            </div>
+            </div>
+          </ClickAwayListener>
+        </div>
+      </nav>
+    </>
+  );
+};
 
-export default header
+export default Header;

@@ -54,7 +54,7 @@ body {
   width: 25vw;
   height: 20vh;
   border-radius: 10px;
-  box-shadow: 2px 5px #a82b2b;
+  box-shadow: 0.4vmax 7px 8px #a82b2b;
 }
 .myforms_icon_btn {
   background-color: white;
