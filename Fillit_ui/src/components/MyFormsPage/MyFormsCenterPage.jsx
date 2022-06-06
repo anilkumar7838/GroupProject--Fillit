@@ -7,6 +7,7 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import EditIcon from "@mui/icons-material/Edit";
 import ShareIcon from "@mui/icons-material/Share";
 import DeleteIcon from "@mui/icons-material/Delete";
+import ClickAwayListener from "@mui/base/ClickAwayListener";
 import LockIcon from "@mui/icons-material/Lock";
 import { IconButton } from "@mui/material";
 import { Button } from "@mui/material";
@@ -19,6 +20,9 @@ const CardBox = ({ name, lock, responses, date }) => {
   };
   const handleDropDown = () => {
     return setdropDownShow(!dropDownShow);
+  };
+  const handleClickAway = () => {
+    return setdropDownShow(false);
   };
 
   return (
@@ -43,61 +47,66 @@ const CardBox = ({ name, lock, responses, date }) => {
           <div className='myforms_response_box'>
             <span>Responses: {responses}</span>
           </div>
-          <div className='myforms_dropdown'>
-            <IconButton onClick={handleDropDown} style={{ cursor: "pointer" }}>
-              <MoreVertIcon />
-            </IconButton>
+          <ClickAwayListener onClickAway={handleClickAway}>
+            <div className='myforms_dropdown'>
+              <IconButton
+                onClick={handleDropDown}
+                style={{ cursor: "pointer" }}
+              >
+                <MoreVertIcon />
+              </IconButton>
 
-            <div
-              className={
-                dropDownShow
-                  ? "myforms_lower_rght_dropdown myforms_show"
-                  : "myforms_lower_rght_dropdown"
-              }
-            >
-              <div className='myforms_drop_down_content'>
-                <>
-                  <IconButton
-                    style={{
-                      justifyContent: "flex-start",
-                      fontSize: "20px",
-                    }}
-                  >
-                    <EditIcon fontSize='small' />{" "}
-                    <span style={{ marginLeft: "10px", fontSize: "10px" }}>
-                      Edit
-                    </span>
-                  </IconButton>
-                </>
-                <>
-                  <IconButton
-                    style={{
-                      justifyContent: "flex-start",
-                      fontSize: "20px",
-                    }}
-                  >
-                    <ShareIcon fontSize='small' />{" "}
-                    <span style={{ marginLeft: "10px", fontSize: "10px" }}>
-                      Share
-                    </span>
-                  </IconButton>
-                </>
-                <>
-                  <IconButton
-                    style={{
-                      justifyContent: "flex-start",
-                      fontSize: "20px",
-                    }}
-                  >
-                    <DeleteIcon fontSize='small' />{" "}
-                    <span style={{ marginLeft: "10px", fontSize: "10px" }}>
-                      Delete
-                    </span>
-                  </IconButton>
-                </>
+              <div
+                className={
+                  dropDownShow
+                    ? "myforms_lower_rght_dropdown myforms_show"
+                    : "myforms_lower_rght_dropdown"
+                }
+              >
+                <div className='myforms_drop_down_content'>
+                  <>
+                    <IconButton
+                      style={{
+                        justifyContent: "flex-start",
+                        fontSize: "20px",
+                      }}
+                    >
+                      <EditIcon fontSize='small' />{" "}
+                      <span style={{ marginLeft: "10px", fontSize: "10px" }}>
+                        Edit
+                      </span>
+                    </IconButton>
+                  </>
+                  <>
+                    <IconButton
+                      style={{
+                        justifyContent: "flex-start",
+                        fontSize: "20px",
+                      }}
+                    >
+                      <ShareIcon fontSize='small' />{" "}
+                      <span style={{ marginLeft: "10px", fontSize: "10px" }}>
+                        Share
+                      </span>
+                    </IconButton>
+                  </>
+                  <>
+                    <IconButton
+                      style={{
+                        justifyContent: "flex-start",
+                        fontSize: "20px",
+                      }}
+                    >
+                      <DeleteIcon fontSize='small' />{" "}
+                      <span style={{ marginLeft: "10px", fontSize: "10px" }}>
+                        Delete
+                      </span>
+                    </IconButton>
+                  </>
+                </div>
               </div>
             </div>
-          </div>
+          </ClickAwayListener>
         </div>
       </div>
     </div>
