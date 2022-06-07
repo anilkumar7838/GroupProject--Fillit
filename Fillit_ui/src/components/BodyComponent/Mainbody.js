@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Mainbody.css";
+// import About from "../About/index";
 import Imageslider from "../Imageslider/imageslider";
 import { SliderData } from "../Imageslider/SliderData";
 import Footer from "../Footer/footer";
@@ -34,6 +35,7 @@ const Mainbody = () => {
           </div>
         </div>
       </section>
+      {/* <About/> */}
       <Imageslider slides={SliderData} />
       <Footer />
     </div>

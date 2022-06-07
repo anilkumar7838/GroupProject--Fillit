@@ -26,8 +26,8 @@ const CardBox = ({ name, lock, responses, date }) => {
   };
 
   return (
-    <div classNameName='myform_flexrow_btm'>
-      <div classNameName='myforms_lower'>
+    <div className='myform_flexrow_btm'>
+      <div className='myforms_lower'>
         <div>
           <div>
             <span style={{ fontWeight: "bold" }}>{name}</span>
@@ -43,12 +43,12 @@ const CardBox = ({ name, lock, responses, date }) => {
           </div>
           <div style={{ fontSize: "15px", color: "lightgray" }}>{date}</div>
         </div>
-        <div classNameName='myforms_lwr_lft_bottom'>
-          <div classNameName='myforms_response_box'>
+        <div className='myforms_lwr_lft_bottom'>
+          <div className='myforms_response_box'>
             <span>Responses: {responses}</span>
           </div>
           <ClickAwayListener onClickAway={handleClickAway}>
-            <div classNameName='myforms_dropdown'>
+            <div className='myforms_dropdown'>
               <IconButton
                 onClick={handleDropDown}
                 style={{ cursor: "pointer" }}
@@ -57,13 +57,13 @@ const CardBox = ({ name, lock, responses, date }) => {
               </IconButton>
 
               <div
-                classNameName={
+                className={
                   dropDownShow
                     ? "myforms_lower_rght_dropdown myforms_show"
                     : "myforms_lower_rght_dropdown"
                 }
               >
-                <div classNameName='myforms_drop_down_content'>
+                <div className='myforms_drop_down_content'>
                   <>
                     <IconButton
                       style={{
@@ -120,18 +120,18 @@ const MyFormsCenterPage = (props) => {
   const count = props.data.length;
   return (
     <>
-      <div classNameName='myform_container'>
-        <div classNameName='myform_flexrow_upr'>
-          <div classNameName='myform_upper_left'>
+      <div className='myform_container'>
+        <div className='myform_flexrow_upr'>
+          <div className='myform_upper_left'>
             <h2>My Forms</h2>
             <div style={{ color: "grey" }}>Total Count : {count}</div>
           </div>
-          <div classNameName='myforms_upper_right'>
-            <IconButton classNameName='myforms_icon_btn'>
-              <SearchIcon classNameName='myforms_icon' />
+          <div className='myforms_upper_right'>
+            <IconButton className='myforms_icon_btn'>
+              <SearchIcon className='myforms_icon' />
             </IconButton>
-            <IconButton classNameName='myforms_icon_btn'>
-              <FilterAltOutlinedIcon classNameName='myforms_icon' />
+            <IconButton className='myforms_icon_btn'>
+              <FilterAltOutlinedIcon className='myforms_icon' />
             </IconButton>
           </div>
           <div>

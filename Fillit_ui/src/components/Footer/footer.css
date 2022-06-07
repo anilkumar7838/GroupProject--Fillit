@@ -51,8 +51,8 @@ ul{
 }
 .footer-col .social-links a{
 	display: inline-block;
-	height: 40px;
-	width: 40px;
+	height: 30px;
+	width: 30px;
 	margin:0 10px 10px 0;
 	text-align: center;
 	line-height: 40px;
@@ -65,8 +65,7 @@ ul{
 }
 
 .foot-icon{
-    width:100%;
-    height: 100%;
+    font-size: 35px;
 }
 
 /*responsive*/

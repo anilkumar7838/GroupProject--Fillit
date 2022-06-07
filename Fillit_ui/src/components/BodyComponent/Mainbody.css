@@ -5,10 +5,11 @@
     font-family: "Ubuntu",sans-serif;
     box-sizing: border-box;
   }
-  
+
   .navbar{
     position: fixed;
-    background-color: transparent;
+    background-color: none;
+    /* background-color: transparent; */
     width: 100%;
     padding: 30px 0;
     top: 0;
@@ -128,7 +129,7 @@
   }
   
   #home .content h1{
-    font-size: 4vmax;
+    font-size: 3vmax;
     margin-bottom: 20px;
   }
   
@@ -205,7 +206,7 @@
       background-color: #353b48;
       top: 0;
       right: -100%;
-      max-width: 400px;
+      max-width: 300px;
       padding: 80px 50px;
       transition: .3s linear;
       
@@ -213,7 +214,7 @@
   
     .navbar-menu a{
       display: block;
-      font-size: 30px;
+      font-size: 20px;
       margin: 12px 0;
     }
   

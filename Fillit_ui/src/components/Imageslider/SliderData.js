@@ -1,18 +1,20 @@
+import img1 from "../../assets/image/About/img1.png"
+import img2 from "../../assets/image/About/img2.jpg"
+import img4 from "../../assets/image/About/img4.png"
+import img7 from "../../assets/image/About/img7.jpg"
+import img8 from "../../assets/image/About/img8.jpg"
+
 export const SliderData = [
   {
-    image:
-      'https://www.cleveroad.com/images/article-previews/facial-recognition-app-iphone.png'
+    image:img2
   },
   {
-    image:
-      'https://www.cleveroad.com/images/article-previews/apple-face-recognition-software.png'
+    image:img4
   },
   {
-    image:
-      'https://www.cleveroad.com/images/article-previews/ios-facial-recognition-app.png'
+    image:img7
   },
   {
-    image:
-      'https://www.cleveroad.com/images/article-previews/android-face-recognition-unlock.png'
-  }
+    image:img8
+  },
 ];

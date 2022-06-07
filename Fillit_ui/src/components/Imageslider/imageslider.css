@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background:linear-gradient(to right,tomato,white,white,tomato);
+  background:linear-gradient(to right,tomato,whitesmoke,whitesmoke,tomato);
 }
 .slider-container h1 {
   color: tomato;
