@@ -1,8 +1,10 @@
 body {
-  background-color: rgba(239, 239, 239, 0.99);
+  background-color: #cda3a3;
 }
 .myform_container {
-  display: inline-flex;
+  position: relative;
+  top:80px;
+  display: flex;
   flex-direction: column;
   margin: 20px;
   align-items: center;
@@ -46,7 +48,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin: 0rem 1rem;
+  margin: 1rem 1rem;
   background-color: rgb(255, 255, 255);
   padding: 15px;
   min-width: 270px;
@@ -54,7 +56,7 @@ body {
   width: 25vw;
   height: 20vh;
   border-radius: 10px;
-  box-shadow: 2px 5px #a82b2b;
+  box-shadow: 0.7vmax 12px 12px #a82b2b;
 }
 
 .myforms_icon_btn {

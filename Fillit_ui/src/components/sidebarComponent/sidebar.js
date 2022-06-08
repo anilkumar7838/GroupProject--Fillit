@@ -32,15 +32,15 @@ const Sidebar = () => {
 //         <List style={{width:"250px"}}>
 //           <ListItem>
 //                 <ListItemText style={{fontSize:"48px",marginLeft:"20px"}}>
-//                     <span className="list_style" style={{fontWeight:"700"}}>F</span>
-//                     <span className="list_style">i</span>
-//                     <span className="list_style" >l</span>
-//                     <span className="list_style" >l</span>
-//                     {/* <span className="list_style"></span> */}
-//                     <span className="list_style" style={{fontWeight:"700"}}>I</span>
-//                     <span className="list_style" style={{marginRight:"10px"}}>t</span>
+//                     <span classNameName="list_style" style={{fontWeight:"700"}}>F</span>
+//                     <span classNameName="list_style">i</span>
+//                     <span classNameName="list_style" >l</span>
+//                     <span classNameName="list_style" >l</span>
+//                     {/* <span classNameName="list_style"></span> */}
+//                     <span classNameName="list_style" style={{fontWeight:"700"}}>I</span>
+//                     <span classNameName="list_style" style={{marginRight:"10px"}}>t</span>
                     
-//                    //<span className="list_style_form" style={{marginLeft:"20px"}}>Forms</span>
+//                    //<span classNameName="list_style_form" style={{marginLeft:"20px"}}>Forms</span>
 
 //                 </ListItemText>
 //           </ListItem>
@@ -49,31 +49,31 @@ const Sidebar = () => {
 //         <Divider/>
 
 //         <List style={{marginLeft:"8px",marginRight:"8px",marginTop:"15px"}}>
-//             <ListItem className="list_item">
+//             <ListItem classNameName="list_item">
 //                 <img src={Img1} alt="not found" style={{height:"25px"}} />
-//                 <div className="img_style">Sheets</div>
+//                 <div classNameName="img_style">Sheets</div>
 //             </ListItem>
-//             <ListItem className="list_item">
+//             <ListItem classNameName="list_item">
 //                 <img src={Img2} alt="not found" style={{height:"27px"}} />
-//                 <div className="img_style">Docs</div>
+//                 <div classNameName="img_style">Docs</div>
 //             </ListItem>
-//             <ListItem className="list_item">
+//             <ListItem classNameName="list_item">
 //                 <img src={Img3} alt="not found" style={{height:"22px"}} />
-//                 <div className="img_style">Slides</div>
+//                 <div classNameName="img_style">Slides</div>
 //             </ListItem>
-//             <ListItem className="list_item">
+//             <ListItem classNameName="list_item">
 //                 <img src={Img4} alt="not found" style={{height:"22px"}} />
-//                 <div className="img_style">Forms</div>
+//                 <div classNameName="img_style">Forms</div>
 //             </ListItem>
             
 //         </List>
 //         <Divider/>
 //         <List style={{marginLeft:"8px",marginRight:"8px",marginTop:"15px"}}>
-//             <ListItem className="list_item">
+//             <ListItem classNameName="list_item">
 //                 <FiSettings/>
 //                 <div style={{marginLeft:"20px",fontSize:"14px"}}>Settings</div>
 //             </ListItem>
-//             <ListItem className="list_item">
+//             <ListItem classNameName="list_item">
 //                 <BsQuestionCircle/>
 //                 <div style={{marginLeft:"20px",fontSize:"14px",fontWeight:"500",color:"grey"}}>Help & FeedBack</div>
 //             </ListItem>
@@ -81,7 +81,7 @@ const Sidebar = () => {
 
 //         <Divider/>
 //         <List style={{marginLeft:"8px",marginRight:"8px",marginTop:"15px"}}>
-//             <ListItem className="list_item">
+//             <ListItem classNameName="list_item">
 //                 <img src={Img5} alt="not found" style={{height:"20px"}} />
 //                 <div style={{marginLeft:"20px",fontSize:"14px"}}>Drive</div>
 //             </ListItem>
@@ -113,15 +113,15 @@ const Sidebar = () => {
         <List style={{width:"250px"}}>
           <ListItem>
                 <ListItemText style={{fontSize:"48px",marginLeft:"20px"}}>
-                    <span className="list_style" style={{fontWeight:"700"}}>F</span>
-                    <span className="list_style">i</span>
-                    <span className="list_style" >l</span>
-                    <span className="list_style" >l</span>
-                    {/* <span className="list_style"></span> */}
-                    <span className="list_style" style={{fontWeight:"700"}}>I</span>
-                    <span className="list_style" style={{marginRight:"10px"}}>t</span>
+                    <span classNameName="list_style" style={{fontWeight:"700"}}>F</span>
+                    <span classNameName="list_style">i</span>
+                    <span classNameName="list_style" >l</span>
+                    <span classNameName="list_style" >l</span>
+                    {/* <span classNameName="list_style"></span> */}
+                    <span classNameName="list_style" style={{fontWeight:"700"}}>I</span>
+                    <span classNameName="list_style" style={{marginRight:"10px"}}>t</span>
                     
-                    {/* <span className="list_style_form" style={{marginLeft:"20px"}}>Forms</span> */}
+                    {/* <span classNameName="list_style_form" style={{marginLeft:"20px"}}>Forms</span> */}
 
                 </ListItemText>
           </ListItem>
@@ -130,31 +130,31 @@ const Sidebar = () => {
         <Divider/>
 
         <List style={{marginLeft:"8px",marginRight:"8px",marginTop:"15px"}}>
-            <ListItem className="list_item">
+            <ListItem classNameName="list_item">
                 <img src={Img1} alt="not found" style={{height:"25px"}} />
-                <div className="img_style">Sheets</div>
+                <div classNameName="img_style">Sheets</div>
             </ListItem>
-            <ListItem className="list_item">
+            <ListItem classNameName="list_item">
                 <img src={Img2} alt="not found" style={{height:"27px"}} />
-                <div className="img_style">Docs</div>
+                <div classNameName="img_style">Docs</div>
             </ListItem>
-            <ListItem className="list_item">
+            <ListItem classNameName="list_item">
                 <img src={Img3} alt="not found" style={{height:"22px"}} />
-                <div className="img_style">Slides</div>
+                <div classNameName="img_style">Slides</div>
             </ListItem>
-            <ListItem className="list_item">
+            <ListItem classNameName="list_item">
                 <img src={Img4} alt="not found" style={{height:"22px"}} />
-                <div className="img_style">Forms</div>
+                <div classNameName="img_style">Forms</div>
             </ListItem>
             
         </List>
         <Divider/>
         <List style={{marginLeft:"8px",marginRight:"8px",marginTop:"15px"}}>
-            <ListItem className="list_item">
+            <ListItem classNameName="list_item">
                 <FiSettings/>
                 <div style={{marginLeft:"20px",fontSize:"14px"}}>Settings</div>
             </ListItem>
-            <ListItem className="list_item">
+            <ListItem classNameName="list_item">
                 <BsQuestionCircle/>
                 <div style={{marginLeft:"20px",fontSize:"14px",fontWeight:"500",color:"grey"}}>Help & FeedBack</div>
             </ListItem>
@@ -162,7 +162,7 @@ const Sidebar = () => {
 
         <Divider/>
         <List style={{marginLeft:"8px",marginRight:"8px",marginTop:"15px"}}>
-            <ListItem className="list_item">
+            <ListItem classNameName="list_item">
                 <img src={Img5} alt="not found" style={{height:"20px"}} />
                 <div style={{marginLeft:"20px",fontSize:"14px"}}>Drive</div>
             </ListItem>
