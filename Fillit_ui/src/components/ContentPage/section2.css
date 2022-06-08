@@ -1,0 +1,28 @@
+.content-2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 8rem;
+}
+.content-2 .text-detail{
+    width: 39%;
+}
+.content-2 .text-detail h2{
+    color:#212529;
+    font-size: 2.1rem;
+    padding-bottom: 1.8rem;
+}
+.content-2 .text-detail p{
+    color:#7f8c8d;
+    font-size: 1.1rem;
+}
+
+.content-2 .formImg{
+    width:55%;
+}
+.content-2 .formImg img{
+    width: 80%;
+    object-fit: cover;
+}

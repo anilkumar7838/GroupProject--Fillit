@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="88" height="88" viewBox="0 0 88 88">
+    <defs>
+        <linearGradient id="ri5djv0h1a" x1="50%" x2="50%" y1="0%" y2="100%">
+            <stop offset="0%" stop-color="#F3F4F8"/>
+            <stop offset="100%" stop-color="#FAFAFC"/>
+        </linearGradient>
+        <path id="a86edaa2zb" d="M0 0L20 0 20 20 0 20z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g transform="translate(-836 -4437) translate(716 4341) translate(120 96)">
+                    <circle cx="44" cy="44" r="44" fill="url(#ri5djv0h1a)" fill-rule="nonzero" opacity=".8"/>
+                    <circle cx="44" cy="44" r="38" fill="#FFF" stroke="#D0D8E6"/>
+                    <g>
+                        <g stroke="#16A2B8" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" transform="translate(30 29)">
+                            <ellipse cx="13.935" cy="13.982" rx="13.935" ry="13.982"/>
+                            <path d="M31.484 28.989L24.767 23.497"/>
+                        </g>
+                        <g transform="translate(30 29) translate(6 4)">
+                            <mask id="o4ejzvskvc" fill="#fff">
+                                <use xlink:href="#a86edaa2zb"/>
+                            </mask>
+                            <g stroke="#16A2B8" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" mask="url(#o4ejzvskvc)">
+                                <g>
+                                    <path d="M1.386 7.21L6.465 1.211 9.739 4.659 14.662.339M5.152 14.261L5.152 7.21M9.688 8.337L9.688 14.26M14.122 9.233L14.122 14.339M1.386 11.299L1.386 14.579" transform="translate(0 2.105)"/>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

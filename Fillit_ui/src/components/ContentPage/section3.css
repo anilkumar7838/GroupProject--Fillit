@@ -1,0 +1,74 @@
+.classMenu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.features-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 7rem 8rem;
+}
+.features-main > p{
+    font-size: 1.3rem;
+    color:#95a5a6;
+    padding-bottom: 50px;
+    text-align: center;
+}
+.features-main > h2{
+    font-size: 2.2rem;
+    color: #222;
+    font-weight: 700;
+    padding-bottom: 6px;
+    text-align: center;
+}
+
+.feature{
+    width:35%;
+    height: 600px;
+    margin: 12px 30px;
+    box-sizing: border-box;
+    background: #fff;
+    box-shadow: 0 1.6px 3.6px rgba(0,0,0,0.01),0 4.4px 10px rgba(0,0,0,0.015),0 10.6px 24.1px rgba(0,0,0,0.02),0 35px 80px rgba(0,0,0,0.03);
+}
+
+.feature-detail{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 10px;
+
+}
+.feature .feature-Img{
+    width:100%;
+}
+.feature .feature-Img img{
+     width:100%;
+     object-fit: cover;
+}
+
+.feature .tag1,.feature .info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 30px 0 30px;
+}
+.feature .tag1 .h4{
+    color:#212529;
+    font-size: 1.7rem;
+}
+.feature .tag1 p{
+    color:#212529;
+    font-size: 1.1rem;
+}
+
+.feature .info p{
+    color:#212529;
+    font-size: 1.1rem;
+    padding: 15px 30px 30px 30px;
+}
+
+

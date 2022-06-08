@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Mainbody.css";
-// import About from "../About/index";
 import Imageslider from "../Imageslider/imageslider";
 import { SliderData } from "../Imageslider/SliderData";
 import Footer from "../Footer/footer";
@@ -13,6 +12,9 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import Section1 from "../ContentPage/section1";
+import Section2 from "../ContentPage/section2";
+import Section3 from "../ContentPage/section3";
+import Contact from "../ContactUs/contact";
 
 const Mainbody = () => {
   return (
@@ -37,8 +39,11 @@ const Mainbody = () => {
         </div>
       </section>
       {/* <About/> */}
-      {/* <Section1/> */}
-      <Imageslider slides={SliderData} />
+      <Section1/>
+      <Section2/>
+      <Section3/>
+      <Contact/>
+      {/* <Imageslider slides={SliderData} /> */}
       <Footer />
     </div>
   );

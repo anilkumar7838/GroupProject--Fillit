@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="88" height="88" viewBox="0 0 88 88">
+    <defs>
+        <linearGradient id="016jyciv9a" x1="50%" x2="50%" y1="0%" y2="100%">
+            <stop offset="0%" stop-color="#F3F4F8"/>
+            <stop offset="100%" stop-color="#FAFAFC"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g transform="translate(-350 -538) translate(175 187) translate(175 351)">
+                    <circle cx="44" cy="44" r="44" fill="url(#016jyciv9a)" fill-rule="nonzero" opacity=".8"/>
+                    <circle cx="45" cy="44" r="38" fill="#FFF" stroke="#D0D8E6"/>
+                    <circle cx="45.5" cy="43.5" r="14.5" stroke="#16A2B8" stroke-width="2"/>
+                    <path stroke="#16A2B8" stroke-width="2" d="M36 36.057s3.202-.158 3.577.051c.375.215.482.64.534 1.064.05.425 1.283 11.866 1.442 12.189.159.322.425.639.8.639H51"/>
+                    <rect width="5" height="2" x="44" y="41" stroke="#16A2B8" stroke-width="2" rx="1"/>
+                    <path stroke="#16A2B8" stroke-width="2" d="M53 40c0 .261-.833 5.065-1.073 5.448-.166.265-.283.429-.785.513-.502.088-9.142 0-9.142 0"/>
+                    <circle cx="49.5" cy="52.5" r="1.5" fill="#16A2B8"/>
+                    <circle cx="42.5" cy="52.5" r="1.5" fill="#16A2B8"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

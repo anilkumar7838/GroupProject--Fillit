@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="88" height="88" viewBox="0 0 88 88">
+    <defs>
+        <linearGradient id="5voowtozza" x1="50%" x2="50%" y1="0%" y2="100%">
+            <stop offset="0%" stop-color="#F3F4F8"/>
+            <stop offset="100%" stop-color="#FAFAFC"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g transform="translate(-476 -4436) translate(356 4341) translate(120 95)">
+                    <circle cx="44" cy="44" r="44" fill="url(#5voowtozza)" fill-rule="nonzero" opacity=".8"/>
+                    <circle cx="44" cy="44" r="38" fill="#FFF" stroke="#D0D8E6"/>
+                    <g stroke="#16A2B8" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                        <path d="M26.527 13.263L26.527 0 0 0 0 26.526 13.264 26.526M19.964 10.607L19.964 29.357M29.339 19.982L10.589 19.982" transform="translate(31 30)"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
