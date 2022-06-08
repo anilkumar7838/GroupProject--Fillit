@@ -151,7 +151,7 @@ const MyFormsCenterPage = (props) => {
           style={{
             display: "flex",
             flexWrap: "wrap",
-            justifyContent: "flex-start",
+            justifyContent: "center",
           }}
         >
           {props.data.map((instant) => {
