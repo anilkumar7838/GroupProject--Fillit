@@ -12,6 +12,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import YouTubeIcon from '@mui/icons-material/YouTube';
+import Section1 from "../ContentPage/section1";
 
 const Mainbody = () => {
   return (
@@ -36,6 +37,7 @@ const Mainbody = () => {
         </div>
       </section>
       {/* <About/> */}
+      {/* <Section1/> */}
       <Imageslider slides={SliderData} />
       <Footer />
     </div>

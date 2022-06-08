@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import React from 'react'
 import {
   faAngular,
   faCss3,
@@ -8,29 +8,16 @@ import {
   faReact,
 } from '@fortawesome/free-brands-svg-icons'
 import Loader from 'react-loaders'
-import AnimatedLetters from '../AnimatedLetters'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './about.css'
 
 const About = () => {
-  const [letterClass, setLetterClass] = useState('text-animate')
-
-  useEffect(() => {
-    return setTimeout(() => {
-      setLetterClass('text-animate-hover')
-    }, 3000)
-  }, [])
-
   return (
     <>
       <div className="about-container about-page">
         <div className="text-zone">
           <h1>
-            <AnimatedLetters
-              letterClass={letterClass}
-              strArray={['A', 'b', 'o', 'u', 't', ' ', 'm', 'e']}
-              idx={15}
-            />
+            About me
           </h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem temporibus amet impedit! Obcaecati nisi iusto recusandae? Tempora voluptas, ex, voluptatibus excepturi repudiandae ratione vero esse voluptates necessitatibus possimus molestiae beatae quos pariatur ipsa sint!
