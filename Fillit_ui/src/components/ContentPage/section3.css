@@ -68,7 +68,109 @@
 .feature .info p{
     color:#212529;
     font-size: 1.1rem;
-    padding: 15px 30px 30px 30px;
+    padding: 15px 30px 0px 30px;
+}
+.symbol img{
+    width: 6vmax;
+}
+
+@media screen and (max-width:1200px) {
+    .features-main{
+        padding: 6rem;
+    }
+    .features-main > p{
+        font-size: 1.1rem;
+        padding-bottom: 30px;
+    }
+    .features-main > h2{
+        font-size: 2rem;
+        padding-bottom: 4px;
+    }
+    
+    .feature-detail{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-bottom: 10px;
+    
+    }
+    .feature .feature-Img{
+        width:100%;
+    }
+    .feature .feature-Img img{
+         width:100%;
+         object-fit: cover;
+    }
+
+    .feature{
+        width:35%;
+        height: 500px;
+        margin: 12px 30px;
+    }
+    
+    .feature .tag1,.feature .info{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 30px 0 30px;
+    }
+    .feature .tag1 .h4{
+        font-size: 1.2rem;
+    }
+    .feature .tag1 p{
+        font-size: 1rem;
+    }
+    
+    .feature .info p{
+        color:#212529;
+        font-size: 1rem;
+        padding: 15px 15px 30px 15px;
+    }
+}
+
+@media screen and (max-width:950px) {
+    .features-main{
+        padding: 4rem 0;
+    }
+    .classMenu{
+        flex-direction: column;
+    }
+    
+    .feature{
+        width:60%;
+        height: 500px;
+        margin: 23px 12px;
+    }
+    .features-main > p{
+        font-size: 1rem;
+        padding: 0 23px;
+        padding-bottom: 30px;
+    }
+    .features-main > h2{
+        font-size: 1.8rem;
+        padding-bottom: 4px;
+    }
+    
+    .feature-detail{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-bottom: 10px;
+    
+    }   
 }
 
 
+@media screen and (max-width:460px) {
+    .feature{
+        width:80%;
+        height:450px;
+    }
+    .features-main > p{
+        font-size: 0.8rem;
+    }
+    .features-main > h2{
+        font-size: 1.6rem;
+    }
+}

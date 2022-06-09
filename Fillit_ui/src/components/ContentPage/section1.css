@@ -20,7 +20,7 @@
 }
 .details .one h3{
     font-size: 2.5rem;
-    padding-bottom: 1.1rem;
+    margin-bottom: 1.1rem;
 
 }
 .details .one h6{
@@ -49,11 +49,112 @@
 
 .details .two img{
     width:100%;
-    height:80%;
+    height:100%;
 }
 
 .details .two{
-    width:45%;
-    border-left: 2px slid #666262;
-    padding-left: 4rem;
+    width:55%;
+    margin-left: 5rem;
+}
+
+
+@media screen and (max-width:1280px) {
+    .details{
+        padding:6rem 7rem;
+    }
+    
+    .details .one{
+        width:50%;
+    }
+    .details .one h3{
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    
+    }
+    .details .one p{
+        font-size: 1.1rem;
+        padding-bottom: 2.2rem;
+    }
+    
+    .details .one a{
+        font-size: 0.9rem;
+    }
+    
+    .details .two img{
+        width:100%;
+        height:100%;
+    }
+    
+    .details .two{
+        padding-left: 3.5rem;
+    }
+}
+@media screen and (max-width:985px) {
+    .details{
+        flex-direction: column;
+    }
+    
+    .details .one{
+        margin-left: -20%;
+        align-items: flex-start;
+        width:80%;
+    }
+    
+    
+    .details .two{
+        margin:23px 0;
+        width: 100%;
+        padding:0px;
+    }
+}
+@media screen and (max-width:680px) {
+    .details{
+        padding:5rem 7rem;
+    }
+    .details .one{
+        margin-left: 0;
+        width:100%;
+    }
+    .details .one h3{
+        font-size: 1.7rem;
+        margin-bottom: 0.8rem;
+    }
+    .details .one h6{
+        font-size: 1.1rem;
+        padding-bottom: 2rem;
+    }
+    .details .one p{
+        font-size: 1rem;
+        padding-bottom: 2rem;
+    }
+    
+    .details .one a{
+        font-size: 0.8rem;
+    }
+    
+    .details .two{
+        margin:23px 0;
+        width: 100%;
+    }
+}
+@media screen and (max-width:460px) {
+    .details{
+        padding:3rem;
+    }
+    .details .one h3{
+        font-size: 1.4rem;
+        margin-bottom: 0.8rem;
+    }
+    .details .one h6{
+        font-size: 1rem;
+        padding-bottom: 2rem;
+    }
+    .details .one p{
+        font-size: 0.8rem;
+        padding-bottom: 2rem;
+    }
+    
+    .details .one a{
+        font-size: 0.7rem;
+    }
 }
