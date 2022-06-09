@@ -2,4 +2,95 @@ body {
   background-color: rgb(9 4 173 / 87%);
 }
 .FormBuilder_container {
+  display: flex;
+  justify-content: space-between;
+  height: 90vh;
+  width: 100vw;
+}
+.FormGenerator_container {
+  height: 100%;
+  border: 1px solid black;
+  margin: 1rem;
+  overflow: scroll;
+  padding: 1rem;
+  width: 60%;
+}
+.FormDesigner_container {
+  border: 1px solid black;
+  margin: 1rem;
+  padding: 1rem;
+  width: 30%;
+  height: 100%;
+}
+.FormGenerator_Form_Title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.FormGenerator_Form_Title label {
+  position: absolute;
+  top: 29px;
+  left: 23px;
+  font-size: 35px;
+  color: #fff;
+
+  transition: all 0.5s ease-in-out;
+}
+.FormGenerator_Form_Title input {
+  border: 0;
+  border-bottom: 1px solid #555;
+  background: transparent;
+  width: 100%;
+  margin: 20px;
+  padding: 8px 0 5px 0;
+  font-size: 3rem;
+  color: #fff;
+}
+.FormGenerator_Form_Title input:focus {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #e74c3c;
+}
+.FormGenerator_Form_Title input:focus + label,
+.FormGenerator_Form_Title input:valid + label {
+  top: -25px;
+  font-size: 30px;
+  color: #e74c3c;
+}
+
+.text_basics {
+  display: inline-flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 10px;
+  justify-content: flex-start;
+}
+.text_basics label {
+  font-family: monospace;
+  font-size: 3rem;
+}
+.text_basics input {
+  padding: 10px 5px 5px 10px;
+
+  font-size: 2rem;
+}
+
+.text_colorful {
+  display: inline-flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 10px;
+  justify-content: flex-start;
+}
+.text_colorful label {
+  font-family: monospace;
+  color: #e74c3c;
+  font-size: 3rem;
+}
+.text_colorful input {
+  padding: 10px 5px 5px 10px;
+  font-size: 2rem;
 }

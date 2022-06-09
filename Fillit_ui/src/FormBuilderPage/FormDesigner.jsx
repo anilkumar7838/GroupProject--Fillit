@@ -1,7 +1,11 @@
 import React from "react";
 
 const FormDesigner = () => {
-  return <div>FormDesigner</div>;
+  return (
+    <>
+      <div className='FormDesigner_container'>FormDesigner</div>
+    </>
+  );
 };
 
 export default FormDesigner;
