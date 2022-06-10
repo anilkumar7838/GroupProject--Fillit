@@ -1,0 +1,40 @@
+body {
+  background-color: gray;
+}
+.textInput_css1 {
+  padding: 10px;
+  position: relative;
+  width: 80vmin;
+  margin: 4vw;
+}
+
+.textInput_css1 input {
+  width: 100%;
+  padding: 15px 5px 5px 5px;
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  margin-bottom: 8px;
+  border: none;
+  border-bottom: 1px solid rgb(5, 155, 196);
+  outline: none;
+  background: transparent;
+}
+.textInput_css1 label {
+  position: absolute;
+  left: 24px;
+  top: 12px;
+  padding: 10px 0;
+  font-size: 16px;
+  color: rgb(5, 155, 196);
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.textInput_css1 input:focus ~ label,
+.textInput_css1 input:hover ~ label,
+.textInput_css1 input:valid ~ label {
+  top: -4px;
+  left: 12px;
+  color: #0031b6;
+  font-size: 12px;
+}
