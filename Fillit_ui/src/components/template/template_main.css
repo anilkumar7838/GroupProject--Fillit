@@ -99,7 +99,7 @@
 .button2:hover{
     filter: brightness(120%);
     filter: contrast(120%);
-    filter: drop-shadow(10px 10px 10px red);
+    filter: drop-shadow(10px 10px 10px #16a2b8);
     background-color: #940915;
 }
 
@@ -192,7 +192,7 @@
     /* width: 260px; */
     filter: brightness(120%);
     filter: contrast(120%);
-    filter: drop-shadow(10px 10px 10px red);
+    filter: drop-shadow(0.5vmax 3px 5px #333);
     cursor: pointer;
 }
 
