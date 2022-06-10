@@ -9,7 +9,7 @@ import axios from "axios";
 
 // ----------- Component : contactUs -------------
 
-const Contact = React.forwardRef((props,ref)=>{
+const Contact = React.forwardRef((props, ref) => {
   const [msg, setMsg] = React.useState({ Name: "", email: "", message: "" });
 
   const notify = (message, type = null) => {
@@ -38,6 +38,7 @@ const Contact = React.forwardRef((props,ref)=>{
   // ----------------- Confirmation on Submit --------------------
   const formSubmit = (e) => {
     e.preventDefault();
+
     axios
       .post("/api/v1/contact", msg)
       .then((res) => {
@@ -48,69 +49,67 @@ const Contact = React.forwardRef((props,ref)=>{
       });
   };
   return (
-    <section className="contact-main" id="contact" ref={ref}>
-      <div className="contact-content">
+    <section className='contact-main' id='contact' ref={ref}>
+      <div className='contact-content'>
         <h2>Contact Us</h2>
-        <p>
-        For any query, fill the form to contact us.
-        </p>
+        <p>For any query, fill the form to contact us.</p>
       </div>
-      <div className="contact-container">
-        <div className="contactInfo">
-          <div className="contact-box">
-            <div className="icon">
+      <div className='contact-container'>
+        <div className='contactInfo'>
+          <div className='contact-box'>
+            <div className='icon'>
               <LocationOnIcon />
             </div>
-            <div className="text">
+            <div className='text'>
               <h3>Address</h3>
               <p>C-1/35 Dwarka sec-16,New Delhi</p>
             </div>
           </div>
-          <div className="contact-box">
-            <div className="icon">
+          <div className='contact-box'>
+            <div className='icon'>
               <PhoneForwardedIcon />
             </div>
-            <div className="text">
+            <div className='text'>
               <h3>Mb.Number</h3>
               <p>7838908721</p>
             </div>
           </div>
-          <div className="contact-box">
-            <div className="icon">
+          <div className='contact-box'>
+            <div className='icon'>
               <MailIcon />
             </div>
-            <div className="text">
+            <div className='text'>
               <h3>Email</h3>
               <p>akreal7838@gmail.com</p>
             </div>
           </div>
         </div>
-        <div className="contactForm">
+        <div className='contactForm'>
           <form onSubmit={formSubmit}>
             <h2>Send Message</h2>
-            <div className="inputBox">
-              <input type="text" name="Name" onChange={formHandler} required />
+            <div className='inputBox'>
+              <input type='text' name='Name' onChange={formHandler} required />
               <span>Full Name</span>
             </div>
-            <div className="inputBox">
+            <div className='inputBox'>
               <input
-                type="email"
-                name="email"
+                type='email'
+                name='email'
                 onChange={formHandler}
                 required
               />
               <span>Email</span>
             </div>
-            <div className="inputBox">
+            <div className='inputBox'>
               <textarea
-                name="message"
+                name='message'
                 onChange={formHandler}
                 required
               ></textarea>
               <span>Type your Message..</span>
             </div>
-            <div className="inputBox">
-              <input type="Submit" name="" value="Send" />
+            <div className='inputBox'>
+              <input type='Submit' name='' value='Send' />
             </div>
           </form>
         </div>
@@ -118,6 +117,6 @@ const Contact = React.forwardRef((props,ref)=>{
       <ToastContainer />
     </section>
   );
-})
+});
 
 export default Contact;

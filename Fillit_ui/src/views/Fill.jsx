@@ -1,12 +1,10 @@
-import TextField from "../components/InputFieldsComp/TextField";
+import RegistrationPage from "../components/Forms/registrationPage";
 
 const Fill = () => {
   return (
     <div>
       <h1>Fill</h1>
-      <TextField label='Full Name' style='textInput_css1' />
-      <TextField label='Full Name' style='textInput_css2' />
-      <TextField label='Full Name' style='textInput_css3' />
+      <RegistrationPage />
     </div>
   );
 };
