@@ -6,6 +6,7 @@ import Fill from "./views/Fill";
 import MyForms from "./views/MyForms";
 import About from "./components/About/about"
 import Form from "./components/RegistrationForm/form";
+import FormType1 from "./components/FomBuilder/formType1";
 function App() {
   return (
     <div className='App'>
@@ -16,6 +17,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/form' element={<Form/>} />
           <Route path='/about' element={<About />} />
+          <Route path='/build' element={<FormType1 />} />
         </Routes>
       </Router>
     </div>
