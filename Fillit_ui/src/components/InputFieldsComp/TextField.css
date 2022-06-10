@@ -1,21 +1,22 @@
-body {
-  background-color: gray;
-}
 .textInput_css1 {
-  padding: 10px;
+  padding: 1vmin;
+  display: flex;
   position: relative;
-  width: 80vmin;
-  margin: 4vw;
+  /* align-content: center; */
+  align-items: flex-start;
+  width: 90%;
+  margin: 5vmin;
 }
 
 .textInput_css1 input {
   width: 100%;
-  padding: 15px 5px 5px 5px;
-  font-size: 16px;
+  height: 36px;
+  padding: 13px 5px 5px 5px;
+  font-size: 19px;
   color: rgb(0, 0, 0);
-  margin-bottom: 8px;
+  margin: 8px 0px;
   border: none;
-  border-bottom: 1px solid rgb(5, 155, 196);
+  border-bottom: 2px solid black;
   outline: none;
   background: transparent;
 }
@@ -25,16 +26,135 @@ body {
   top: 12px;
   padding: 10px 0;
   font-size: 16px;
-  color: rgb(5, 155, 196);
+  color: black;
+  pointer-events: none;
+  transition: 0.5s;
+}
+.textInput_css1 input:valid,
+.textInput_css1 input:focus {
+  border-bottom: 3px solid;
+  border-image-source: linear-gradient(
+    94deg,
+    rgba(9, 9, 121, 1) 27%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  border-image-slice: 1;
+}
+.textInput_css1 input:focus + label,
+.textInput_css1 input:valid + label {
+  top: -4px;
+  left: 12px;
+  color: aqua;
+  font-size: 12px;
+  font-weight: bolder;
+}
+
+/* CSS TWO For Text Box */
+.textInput_css2 {
+  padding: 1vmin;
+  display: flex;
+  position: relative;
+  /* align-content: center; */
+  align-items: flex-start;
+  width: 90%;
+  margin: 5vmin;
+}
+
+.textInput_css2 input {
+  width: 30%;
+  padding: 15px 5px 5px 5px;
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  margin-bottom: 8px;
+  border: none;
+  border-bottom: 2px solid rgb(0, 0, 0);
+  outline: none;
+  background: transparent;
+  transition: 1s;
+}
+.textInput_css2 label {
+  position: absolute;
+  left: 10px;
+  top: 0;
+  padding: 10px 0;
+  font-size: 14px;
+  color: rgb(0, 0, 0);
   pointer-events: none;
   transition: 0.5s;
 }
 
-.textInput_css1 input:focus ~ label,
-.textInput_css1 input:hover ~ label,
-.textInput_css1 input:valid ~ label {
-  top: -4px;
-  left: 12px;
-  color: #0031b6;
-  font-size: 12px;
+.textInput_css2 input:focus,
+.textInput_css2 input:valid {
+  width: 90%;
+  margin: 8px 0px;
+  border-bottom: 3px solid;
+  border-image-source: linear-gradient(
+    94deg,
+    rgba(9, 9, 121, 1) 27%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  border-image-slice: 1;
+}
+.textInput_css2 input:focus ~ label,
+.textInput_css2 input:valid ~ label {
+  color: aqua;
+  font-style: oblique;
+  font-weight: bold;
+}
+
+/* CSS #3 For Text Box */
+.textInput_css3 {
+  padding: 1vmin;
+  display: flex;
+  position: relative;
+  /* align-content: center; */
+  align-items: flex-start;
+  width: 90%;
+  margin: 5vmin;
+}
+
+.textInput_css3 input {
+  width: 90%;
+  padding: 10px 5px 10px 0px;
+  font-size: 16px;
+  border: 2px solid black;
+  color: rgb(0, 0, 0);
+  margin: 8px 0px 8px 10px;
+  background: transparent;
+  font-family: monospace;
+  transition: 0.5s;
+}
+
+.textInput_css3 label {
+  position: relative;
+  margin: 7px 10px;
+  padding: 6px 2px;
+  color: black;
+  pointer-events: none;
+  transition: 1s;
+  text-align: center;
+}
+.textInput_css3 input:valid,
+.textInput_css3 input:focus {
+  border: 5px solid;
+  align-items: center;
+  border-image-source: linear-gradient(
+    0deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 27%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  border-image-slice: 1;
+}
+.textInput_css3 input:focus + label,
+.textInput_css3 input:valid + label {
+  background-image: linear-gradient(
+    0deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 27%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  color: rgb(222, 222, 222);
+  height: 49px;
+  border-radius: 5px;
 }

@@ -4,17 +4,21 @@ import "./TextField.css";
 const TextField = (props) => {
   const [textData, setTextData] = useState("");
   return (
-    <div className='textInput_css1'>
+    <div className={props.style}>
       <input
         type='text'
         name={props.label}
         id={props.label}
+        required
         onChange={(e) => {
           setTextData(e.target.value);
           console.log(textData);
         }}
       />
-      <label htmlFor={props.label}>{props.label}</label>
+
+      <label htmlFor={props.label}>
+        <span>{props.label}</span>
+      </label>
     </div>
   );
 };
