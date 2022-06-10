@@ -7,15 +7,19 @@ import {
 } from "react-router-dom";
 import Home from "./views/Home";
 import Fill from "./views/Fill";
+
+
+import TemplatePage from "./components/template/template_main.jsx"
 function App() {
   return (
     <div className="App">
-        <Router>
-          <Routes>
-            <Route path="/fill" element={<Fill/>}/>
-            <Route path="/" element={<Home/>}/>
-          </Routes>
-        </Router>
+      <Router>
+        <Routes>
+          {/* <Route path="/fill" element={<Fill/>}/> */}
+          <Route path="/" element={<Home />} />
+          <Route path='/template' element={<TemplatePage/>}/>
+        </Routes>
+      </Router>
     </div>
   );
 }

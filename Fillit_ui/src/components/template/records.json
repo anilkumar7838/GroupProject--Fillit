@@ -1,0 +1,38 @@
+[
+    {
+        "id":"1",
+        "content":"Start From Scratch",
+        "image":"https://www.mightyforms.com/form-templates/assets/img/create-plus-new.svg",
+        "number":"Add Your Own"
+    },
+    {
+        "id":"2",
+        "content":"Application Form",
+        "image":"https://www.mightyforms.com/form-templates/assets/img/filter-type-tag-card-icons/application-forms.svg",
+        "number":"13 templates"
+    },
+    {
+        "id":"3",
+        "content":"Contact Forms",
+        "image":"https://www.mightyforms.com/form-templates/assets/img/filter-type-tag-card-icons/contact-forms.svg",
+        "number":"32 templates"
+    },
+    {
+        "id":"4",
+        "content":"Lead Generation Form",
+        "image":"https://www.mightyforms.com/form-templates/assets/img/filter-type-tag-card-icons/lead-generation-forms.svg",
+        "number":"26 templates"
+    },
+    {
+        "id":"5",
+        "content":"Payment Forms",
+        "image":"https://www.mightyforms.com/form-templates/assets/img/filter-type-tag-card-icons/payment-forms.svg",
+        "number":"28 templates"
+    },
+    {
+        "id":"6",
+        "content":"Survey And Questionnaries",
+        "image":"https://www.mightyforms.com/form-templates/assets/img/filter-type-tag-card-icons/surveys-and-questionnaires.svg",
+        "number":"75 templates"
+    }
+]
