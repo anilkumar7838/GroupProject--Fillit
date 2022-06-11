@@ -1,16 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import "./registrationPage.css";
 import TextField from "../InputFieldsComp/TextField";
 
 const RegistrationPage = () => {
+  const [style, setStyle] = useState("textInput_css3");
   return (
     <>
       <div class='wrapper'>
+        <button
+          onClick={() => {
+            setStyle("textInput_css1");
+          }}
+        >
+          button
+        </button>
         <div class='title'>Registration Form</div>
         <div class='form'>
-          <TextField label='First Name' style='textInput_css2' />
-          <TextField label='First Name' style='textInput_css1' />
-          <TextField label='First Name' style='textInput_css3' />
+          <TextField label='First Name' style={style} />
+
           <div class='inputfield'>
             <label>First Name</label>
             <input type='text' class='input' />
