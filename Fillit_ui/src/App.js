@@ -7,7 +7,9 @@ import MyForms from "./views/MyForms";
 import About from "./components/About/about"
 import Form from "./components/RegistrationForm/form";
 import FormType1 from "./components/FomBuilder/formType1";
+import DropDown from "./components/utils/DrpoDown/DropDown";
 function App() {
+  
   return (
     <div className='App'>
       <Router>
@@ -18,6 +20,7 @@ function App() {
           <Route path='/form' element={<Form/>} />
           <Route path='/about' element={<About />} />
           <Route path='/build' element={<FormType1 />} />
+          <Route path='/work' element={<DropDown />} />
         </Routes>
       </Router>
     </div>

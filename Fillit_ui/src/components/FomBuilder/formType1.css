@@ -1,14 +1,15 @@
 .form-builder{
-    height: 100vh;
+    width: 100%;
     background: #fff;
 }
 .primary-header{
-    border: 2px solid red;
+    border-bottom: 2px solid #333;
     width:100%;
     height:150px;
 }
 .slideMenu .build-wrapper{
   position: absolute;
+  z-index:2;
 }
 .slideMenu .build-wrapper .menu-btn{
   position: absolute;
@@ -28,22 +29,23 @@
   transition: all 0.3s ease;
 }
 #btn:checked ~ .menu-btn{
-  left: 450px;
+  left: 448px;
 }
-.slideMenu .build-wrapper .menu-btn i{
+.slideMenu .build-wrapper .menu-btn .i-menu{
   position: absolute;
-  /* transform: ; */
-  font-size: 23px;
+  font-size: 34px;
+  margin-left: 2px;
   transition: all 0.3s ease;
 }
-.slideMenu .build-wrapper .menu-btn i.fa-times{
+.slideMenu .build-wrapper .menu-btn .i-close{
   opacity: 0;
 }
-#btn:checked ~ .menu-btn i.fa-times{
+#btn:checked ~ .menu-btn .i-close{
   opacity: 1;
+  font-size: 34px;
   transform: rotate(-180deg);
 }
-#btn:checked ~ .menu-btn i.fa-bars{
+#btn:checked ~ .menu-btn .i-menu{
   opacity: 0;
   transform: rotate(180deg);
 }
@@ -51,11 +53,12 @@
   position: relative;
   top:0;
   background: #404040;
-  height: 100vh;
+  /* height: 100vh; */
   width: 500px;
   overflow: hidden;
   left: -500px;
   transition: all 0.3s ease;
+  padding-bottom: 50px;
 }
 #btn:checked ~ #build-sidebar{
   left: 0;
@@ -72,6 +75,10 @@
 #build-sidebar .build-list-items{
   position: relative;
   background: #404040;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
   width: 100%;
   height: 100%;
   list-style: none;
@@ -149,4 +156,38 @@
 .build-content p{
   font-size: 40px;
   font-weight: 700;
+}
+
+.secondary{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: whitesmoke;
+  /* border: 2px solid red; */
+  height: 100vmin;
+  overflow:scroll;
+}
+.dynamicForm{
+  height:100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dynamicForm .form-build{
+  height: 600px;
+  width:500px;
+  margin-left: 200px;
+  background: yellow;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.save-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:100px;
+  height: 50px;
 }

@@ -1,16 +1,3 @@
-body {
-  margin: 0;
-  background: #151616;
-  font-family: roboto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
 
 :root {
   --bg:  #242526;
@@ -22,13 +9,13 @@ code {
   --speed: 500ms; 
 }
 
-ul {
+.navber-nav {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-a {
+.menu-item,.icon-button{
   color: var(--text-color);
   text-decoration: none;;
 }
@@ -91,7 +78,6 @@ a {
   position: absolute;
   top: 58px;
   width: 300px;
-
   transform: translateX(-45%);
   background-color: var(--bg);
   border: var(--border);
