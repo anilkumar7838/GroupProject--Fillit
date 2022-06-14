@@ -13,7 +13,6 @@ const options={
   transitions:transitions.SCALE,
 }
 
-
 ReactDOM.render(
   <Provider store={dataStore}>
     <AlertProvider template={AlertTemplate}{...options}>
