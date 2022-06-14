@@ -6,12 +6,14 @@ import Fill from "./views/Fill";
 import MyForms from "./views/MyForms";
 import About from "./components/About/about"
 import Form from "./components/RegistrationForm/form";
+import Loginpage from "./components/utils/Loginpage.js"
 function App() {
   return (
     <div className='App'>
       <Router>
         <Routes>
-          <Route path='/fill' element={<Fill />} />
+        <Route path='/fill' element={<Fill />} />
+        <Route path='/login' element={<Loginpage />} />
           <Route path='/myforms' element={<MyForms />} />
           <Route path='/' element={<Home />} />
           <Route path='/form' element={<Form/>} />
