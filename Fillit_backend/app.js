@@ -1,9 +1,11 @@
 const express =require("express");
 const ErrorMiddleware =require("./middleware/error");
+const cors = require("cors");
 const app=express();
 
 // -----for Json to pass as argument----
 app.use(express.json());
+app.use(cors());
 
 //-----Middleware----
 // app.use((req,res,next)=>{
