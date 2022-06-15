@@ -39,7 +39,7 @@ const Contact = React.forwardRef((props,ref)=>{
   const formSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("/api/v1/contact", msg)
+      .post("/v1/contact", msg)
       .then((res) => {
         notify(`Message sent Successfully.`, "success");
       })
