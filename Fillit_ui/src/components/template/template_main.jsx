@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
@@ -7,7 +7,24 @@ import Search from '@mui/icons-material/Search';
 import Records from './records.json'
 import './template_main.css'
 import { Link } from '@mui/material';
-function template_main() {
+import FileDownloadIcon from '@mui/icons-material/FileDownload';
+
+import Moretemplates from './more_templates.json'
+
+
+
+
+
+function Template_main() {
+
+
+  const [show, setShow] = React.useState(false);
+
+  const style={
+    transform:show?'rotate(180deg)':'',
+    transition:'150ms ease',
+  }
+
   return (
     <>
       <div className='template_header'>
@@ -52,10 +69,14 @@ function template_main() {
 
       <div className='template_header_bottom'>
 
-        <span>
-          FillIT
-        </span>
-        <ArrowForwardIosIcon style={{ color: 'lightgrey' }} />
+        <a href="https://blank.page/">
+          <span>
+            FillIT
+          </span>
+        </a>
+        <a href="https://blank.page/ " className='template_header_bottom_icon'>
+          <ArrowForwardIosIcon />
+        </a>
         <span>
           Templates
 
@@ -117,9 +138,45 @@ function template_main() {
 
           }
         </div>
-        <div className='add_more_template'>
+        <div className='add_more_template' onClick={() => setShow(!show)}  >
           See More Templates
-          <KeyboardArrowDownIcon/>
+          <KeyboardArrowDownIcon  style={style}/>
+
+        </div>
+        <div  className='more_templates'>
+          {/* { */}
+          {
+            show ?
+              Moretemplates.map(rec => {
+                return (
+                  <div className='opened_card'>
+                    <div className='opened_photo' >
+                      <img src={rec.photo} alt="img" style={{ height: "250px", width: "450px" }} />
+                    </div>
+                    <div className='more_card_hover_content'>
+                      <button className='more_template_btn1' >
+                        Use template
+                      </button >
+                      <button className='more_template_btn2'  >
+                        preview
+                      </button>
+
+                    </div>
+                    <div className='opened_card_text'>
+                      {rec.title}
+                    </div>
+                    <div className='card_footer'>
+                      <FileDownloadIcon />
+                      {rec.downloads}
+                    </div>
+
+                  </div>
+                )
+              })
+              : null
+          }
+          {/* } */}
+
         </div>
 
       </div>
@@ -132,7 +189,7 @@ function template_main() {
   )
 }
 
-export default template_main
+export default Template_main
 
 
 
