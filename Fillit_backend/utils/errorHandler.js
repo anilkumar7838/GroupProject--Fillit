@@ -1,6 +1,5 @@
 /*
     Class Use only to resolve bad error message
-    "extends" is used for inheritance
 */
 
 class ErrorHandler extends Error{
