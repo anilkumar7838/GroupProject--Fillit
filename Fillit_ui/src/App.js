@@ -9,7 +9,6 @@ import Form from "./components/RegistrationForm/form";
 import Loginpage from "./components/utils/Loginpage.js"
 import FormType1 from "./components/FomBuilder/formType1";
 import DropDown from "./components/utils/DrpoDown/DropDown"
-
 function App() {
   
   return (
