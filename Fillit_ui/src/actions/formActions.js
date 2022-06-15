@@ -12,6 +12,7 @@ export const getformField = ()=>async (dispatch)=>{
         dispatch({type:FORM_FIELD_REQUEST});
         let link=`/build`;
         const {data} = await axios.get(link);
+        console.log(data);
         dispatch({
             type:FORM_FIELD_SUCCESS,
             payload: data,

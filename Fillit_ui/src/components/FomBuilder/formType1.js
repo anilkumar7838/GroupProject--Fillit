@@ -10,9 +10,8 @@ import { Button, Container, TextField } from "@mui/material";
 import Inputfields1 from "../utils/inputFields/inputfields1";
 import { UserContext } from "../utils/DrpoDown/DropDown";
 
-
 const FormType1 = () => {
-  const idx = useContext(UserContext)
+  const idx = useContext(UserContext);
   console.log(idx);
   const [inputFields, setInputFields] = useState([{ firstName: "" }]);
 
@@ -20,6 +19,7 @@ const FormType1 = () => {
     const values = [...inputFields];
     values[i][event.target.name] = event.target.value;
     setInputFields(values);
+    console.log(inputFields);
   };
 
   const handleSubmit = (e) => {
@@ -56,49 +56,41 @@ const FormType1 = () => {
                 <ul class="build-list-items">
                   <li>
                     <a href="#">
-                      <i class="fas fa-home"></i>
                       <DropDown />
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <i class="fas fa-sliders-h"></i>
                       <DropDown />
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <i class="fas fa-address-book"></i>
                       <DropDown />
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <i class="fas fa-cog"></i>
                       <DropDown />
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <i class="fas fa-stream"></i>
                       <DropDown />
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <i class="fas fa-user"></i>
                       <DropDown />
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <i class="fas fa-globe-asia"></i>
                       <DropDown />
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <i class="fas fa-envelope"></i>
                       <DropDown />
                     </a>
                   </li>
@@ -114,11 +106,12 @@ const FormType1 = () => {
                     <div key={i}>
                       {/* <input name="name" type="text" placeholder="Enter your name"/> */}
                       {/* {console.log(idx)} */}
-                      {idx===0 && (<Inputfields1
-                        value={inputField.firstName}
-                        onChange={(event) => handleChangeInput(i, event)}
-                      />
-                      )}
+                      {
+                        <Inputfields1
+                          value={inputField.firstName}
+                          onChange={(event) => handleChangeInput(i, event)}
+                        />
+                      }
                       <button onClick={handleAddField}>Add</button>
                       <button
                         onClick={() => {

@@ -47,3 +47,8 @@ exports.loginUser = catchAsyncError(async(req,res,next)=>{
     });
 
 })
+
+
+exports.logout = catchAsyncError(async(req,res,next)=>{
+    
+})
