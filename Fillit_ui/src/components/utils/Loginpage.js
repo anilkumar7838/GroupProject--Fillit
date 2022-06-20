@@ -76,7 +76,7 @@ const Loginpage = () => {
           </form>
         </div>
       </div>
-
+      </div>
       <div class="panels-containerlogin">
         <div class="panellogin left-panellogin">
           <div class="contentlogin">
