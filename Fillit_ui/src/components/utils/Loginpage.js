@@ -76,7 +76,6 @@ const Loginpage = () => {
           </form>
         </div>
       </div>
-      </div>
       <div class="panels-containerlogin">
         <div class="panellogin left-panellogin">
           <div class="contentlogin">
@@ -103,7 +102,7 @@ const Loginpage = () => {
                 className='btnlogin transparentlogin'
                 id='sign-up-btnlogin'
                 onClick={toggleswitch}
-              >
+                >
                 Sign up
               </button>
             </div>
@@ -119,9 +118,10 @@ const Loginpage = () => {
                 className='btnlogin transparentlogin'
                 id='sign-in-btnlogin'
                 onClick={toggleswitch}
-              >
+                >
                 Sign in
               </button>
+              </div>
             </div>
           </div>
         </div>
