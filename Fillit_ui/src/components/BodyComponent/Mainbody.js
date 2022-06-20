@@ -39,18 +39,20 @@ const Mainbody = () => {
                 <YouTubeIcon />
               </Link>
             </div>
-            <div className='buttons'>
-              <Link to='/'>Get Started</Link>
-              <Link to='/'>Read More</Link>
+            <div className="buttons">
+              <Link to="/myforms">Get Started</Link>
+              <a href="#content">Read More</a>
             </div>
           </div>
         </div>
       </section>
       {/* <About/> */}
-      <Section1 />
-      <Section2 />
-      <Section3 />
-      <Contact />
+      <div id="content">
+        <Section1/>
+      </div>
+      <Section2/>
+      <Section3/>
+      <Contact/>
       {/* <Imageslider slides={SliderData} /> */}
       <Footer />
     </div>

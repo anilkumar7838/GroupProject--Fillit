@@ -1,6 +1,7 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import "./Loginpage.css";
+
+import React,{useState} from 'react'
+import Header from '../headerComponent/header';
+import "./Loginpage.css"
 
 const Loginpage = () => {
   const [switchtoggled, setswitchtoggled] = useState(true);
@@ -11,79 +12,82 @@ const Loginpage = () => {
 
   return (
     <>
-      <div
-        className={
-          switchtoggled ? "containerlogin" : "containerlogin sign-up-modelogin"
-        }
-      >
-        <div className='forms-containerlogin'>
-          <div className='signin-signuplogin'>
-            <form action='/' className='sign-in-formlogin'>
-              <h2 className='titlelogin'>Sign in</h2>
-              <div className='input-fieldlogin'>
-                <i className='fas fa-user'></i>
-                <input type='text' placeholder='Username' />
-              </div>
-              <div className='input-fieldlogin'>
-                <i className='fas fa-lock'></i>
-                <input type='password' placeholder='Password' />
-              </div>
-              <input
-                type='submit'
-                value='Login'
-                className='btnlogin solidlogin'
-              />
-              <p className='social-textlogin'>
-                Or Sign in with social platforms
-              </p>
-              <div className='social-medialogin'>
-                <Link to='/' className='social-iconlogin'>
-                  <i className='fab fa-facebook-f'></i>
-                </Link>
-                <Link to='/' className='social-iconlogin'>
-                  <i className='fab fa-twitter'></i>
-                </Link>
-                <Link to='/' className='social-iconlogin'>
-                  <i className='fab fa-google'></i>
-                </Link>
-                <Link to='/' className='social-iconlogin'>
-                  <i className='fab fa-linkedin-in'></i>
-                </Link>
-              </div>
-            </form>
-            <form action='/' className='sign-up-formlogin'>
-              <h2 className='titlelogin'>Sign up</h2>
-              <div className='input-fieldlogin'>
-                <i className='fas fa-user'></i>
-                <input type='text' placeholder='Username' />
-              </div>
-              <div className='input-fieldlogin'>
-                <i className='fas fa-envelope'></i>
-                <input type='email' placeholder='Email' />
-              </div>
-              <div className='input-fieldlogin'>
-                <i className='fas fa-lock'></i>
-                <input type='password' placeholder='Password' />
-              </div>
-              <input type='submit' className='btnlogin' value='Sign up' />
-              <p className='social-textlogin'>
-                Or Sign up with social platforms
-              </p>
-              <div className='social-medialogin'>
-                <Link to='/' className='social-iconlogin'>
-                  <i className='fab fa-facebook-f'></i>
-                </Link>
-                <Link to='/' className='social-iconlogin'>
-                  <i className='fab fa-twitter'></i>
-                </Link>
-                <Link to='/' className='social-iconlogin'>
-                  <i className='fab fa-google'></i>
-                </Link>
-                <Link to='/' className='social-iconlogin'>
-                  <i className='fab fa-linkedin-in'></i>
-                </Link>
-              </div>
-            </form>
+      <Header style={{backgroundColor:"#333"}}/>
+      <div class={switchtoggled ? "containerlogin" : "containerlogin sign-up-modelogin"} >
+      <div class="forms-containerlogin">
+        <div class="signin-signuplogin">
+          <form action="#" class="sign-in-formlogin">
+            <h2 class="titlelogin">Sign in</h2>
+            <div class="input-fieldlogin">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Username" />
+            </div>
+            <div class="input-fieldlogin">
+              <i class="fas fa-lock"></i>
+              <input type="password" placeholder="Password" />
+            </div>
+            <input type="submit" value="Login" class="btnlogin solidlogin" />
+            <p class="social-textlogin">Or Sign in with social platforms</p>
+            <div class="social-medialogin">
+              <a to="/" class="social-iconlogin">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="social-iconlogin">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="social-iconlogin">
+                <i class="fab fa-google"></i>
+              </a>
+              <a href="#" class="social-iconlogin">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </form>
+          <form action="#" class="sign-up-formlogin">
+            <h2 class="titlelogin">Sign up</h2>
+            <div class="input-fieldlogin">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Username" />
+            </div>
+            <div class="input-fieldlogin">
+              <i class="fas fa-envelope"></i>
+              <input type="email" placeholder="Email" />
+            </div>
+            <div class="input-fieldlogin">
+              <i class="fas fa-lock"></i>
+              <input type="password" placeholder="Password" />
+            </div>
+            <input type="submit" class="btnlogin" value="Sign up" />
+            <p class="social-textlogin">Or Sign up with social platforms</p>
+            <div class="social-medialogin">
+              <a href="#" class="social-iconlogin">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="social-iconlogin">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="social-iconlogin">
+                <i class="fab fa-google"></i>
+              </a>
+              <a href="#" class="social-iconlogin">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="panels-containerlogin">
+        <div class="panellogin left-panellogin">
+          <div class="contentlogin">
+            <h3>New here ?</h3>
+            <p>
+            Tum Jo Aaye Meri Website Mein Baat Ban Gayi
+            Ishq Mazhab Ishq Meri Zaat Ban Gayi!
+            </p>
+            <button class="btnlogin transparentlogin" id="sign-up-btnlogin" onClick={toggleswitch} >
+              Sign up
+            </button>
           </div>
         </div>
 

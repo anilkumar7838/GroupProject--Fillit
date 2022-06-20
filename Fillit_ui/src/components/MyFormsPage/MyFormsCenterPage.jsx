@@ -11,6 +11,7 @@ import ClickAwayListener from "@mui/base/ClickAwayListener";
 import LockIcon from "@mui/icons-material/Lock";
 import { IconButton } from "@mui/material";
 import { Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const CardBox = ({ name, lock, responses, date }) => {
   const [dropDownShow, setdropDownShow] = useState(false);
@@ -114,9 +115,9 @@ const CardBox = ({ name, lock, responses, date }) => {
 };
 
 const MyFormsCenterPage = (props) => {
-  console.log(props.data.length);
-  console.log(props.data);
-
+  // console.log(props.data.length);
+  // console.log(props.data);
+  const navigate=useNavigate();
   const count = props.data.length;
   return (
     <>
@@ -142,6 +143,7 @@ const MyFormsCenterPage = (props) => {
               }}
               color='error'
               variant='contained'
+              onClick={()=>{navigate("/build")}}
             >
               + Create Form
             </Button>

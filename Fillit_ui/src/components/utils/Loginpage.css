@@ -15,7 +15,7 @@ input {
 .containerlogin {
   position: relative;
   width: 100%;
-  background-color: #fff;
+  background-color: #44464a;
   min-height: 100vh;
   overflow: hidden;
 }
@@ -66,7 +66,7 @@ form.sign-in-formlogin {
   font-variant: small-caps;
   font-weight: bolder;
   font-size: 2.2rem;
-  color: #444;
+  color: #fff;
   margin-bottom: 10px;
   font-size: 3rem;
   letter-spacing: 0.2ch;
@@ -116,6 +116,7 @@ form.sign-in-formlogin {
 }
 
 .social-textlogin {
+  color: #fff;
   padding: 0.7rem 0;
   font-size: 1rem;
 }
@@ -132,23 +133,23 @@ form.sign-in-formlogin {
   justify-content: center;
   align-items: center;
   margin: 0 0.45rem;
-  color: #333;
+  color: #fff;
   border-radius: 50%;
-  border: 1px solid #333;
+  border: 1px solid #fffafa;
   text-decoration: none;
   font-size: 1.1rem;
   transition: 0.3s;
 }
 
 .social-iconlogin:hover {
- color: red;
-  border-color: red;
+ color: tomato;
+  border-color: tomato;
   transition: 0.5s;
 }
 
 .btnlogin {
   width: 150px;
-  background-color: #ff0000;
+  background-color: tomato;
   border: none;
   outline: none;
   height: 49px;
@@ -180,7 +181,7 @@ form.sign-in-formlogin {
   top: -10%;
   right: 48%;
   transform: translateY(-50%);
-  background-image: linear-gradient(-45deg, #ff0000 0%, #ff0000 100%);
+  background-image: linear-gradient(-45deg, #ff5330 0%, tomato 100%);
   transition: 1.8s ease-in-out;
   border-radius: 50%;
   z-index: 6;
@@ -245,12 +246,12 @@ form.sign-in-formlogin {
 
 #sign-up-btnlogin:hover{
   background-color: #fff;
-  color: #ff0000;
+  color: tomato;
   transition: 0.7s;
 }
 #sign-in-btnlogin:hover{
   background-color: #fff;
-  color: #ff0000;
+  color: tomato;
   transition: 0.7s;
 }
 .solidlogin:hover{
@@ -258,8 +259,8 @@ form.sign-in-formlogin {
   letter-spacing: 0.1cm;
   transition: 1s;
   background-color: white;
-  border:2px solid #ff0000;
-  color: #ff0000;
+  border:2px solid tomato;
+  color: tomato;
   font-weight: 500;
 }
 

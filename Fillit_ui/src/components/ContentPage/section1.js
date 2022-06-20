@@ -14,7 +14,7 @@ const Section1 = () => {
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus facere iste aut. Est eius mollitia quidem dignissimos! Repellat ratione omnis a quos voluptatum officia!
             </p>
-            <Link to="/">Become a member today</Link>
+            <Link to="/login">Become a member today</Link>
         </div>
         <div className="two">
             {/* <h3></h3> */}
