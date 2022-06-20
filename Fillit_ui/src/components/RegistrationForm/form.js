@@ -1,7 +1,10 @@
 import React from "react";
 import "./form.css";
+import Header from "../headerComponent/header";
 const Form = () => {
   return (
+    <>
+      <Header/>
     <div className="main-form">
       <div class="wrapper">
         <div class="title">Registration Form</div>
@@ -61,6 +64,7 @@ const Form = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

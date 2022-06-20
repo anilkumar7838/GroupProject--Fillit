@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+import Header from '../headerComponent/header';
 import "./Loginpage.css"
 
 
@@ -15,6 +16,7 @@ const Loginpage = () => {
   return (
     
     <>
+      <Header style={{backgroundColor:"#333"}}/>
       <div class={switchtoggled ? "containerlogin" : "containerlogin sign-up-modelogin"} >
       <div class="forms-containerlogin">
         <div class="signin-signuplogin">

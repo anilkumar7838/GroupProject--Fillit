@@ -1,15 +1,47 @@
 import React, { useState } from "react";
 import "../BodyComponent/Mainbody.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ClickAwayListener from "@mui/base/ClickAwayListener";
-
 import HomeIcon from "@mui/icons-material/Home";
 import InfoIcon from "@mui/icons-material/Info";
 import RoomServiceIcon from "@mui/icons-material/RoomService";
 import CallIcon from "@mui/icons-material/Call";
 import WorkspacesIcon from "@mui/icons-material/Workspaces";
+import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
+import LoginIcon from '@mui/icons-material/Login';
+import LogoutIcon from '@mui/icons-material/Logout';
+
+const menu=[
+  {
+    icon:HomeIcon,
+    item:"Home",
+    Location:"home",
+  },
+  {
+    icon:InfoIcon,
+    item:"About",
+    Location:"about",
+  },
+  {
+    icon:RoomServiceIcon,
+    item:"Services",
+    Location:"services",
+  },
+  {
+    icon:WorkspacesIcon,
+    item:"Work",
+    Location:"work",
+  },
+  {
+    icon:CallIcon,
+    item:"Contact",
+    Location:"contact",
+  }
+]
 
 const Header = () => {
+
+  const navigate= useNavigate();
   const [navbar, setNavbar] = useState(false);
   const [sidebar, setSidebar] = useState(false);
 
@@ -19,6 +51,9 @@ const Header = () => {
   const handleClickAway = () => {
     return setSidebar(false);
   };
+
+
+
   const changeNav = () => {
     if (window.scrollY >= 20) {
       setNavbar(true);
@@ -48,25 +83,28 @@ const Header = () => {
               <span></span>
             </button>
             <div className={sidebar ? "navbar-menu active" : "navbar-menu"}>
-              <Link className="navlink" to="/">
-                <HomeIcon className="navicon" />
-                Home
+              {menu.map((menu)=>{
+                return (
+                  <Link className="navlink" to="/">
+                    <menu.icon className="navicon" />
+                    {menu.item}
+                  </Link>
+                )
+              })
+              }
+                
+              <Link className="navlink" to="/login">
+                <AppRegistrationIcon className="navicon" />
+                SignUp
               </Link>
-              <Link className="navlink" to="/">
-                <InfoIcon className="navicon" />
-                About
+              <Link className="navlink" to="/login">
+                <LoginIcon className="navicon" />
+                Login
               </Link>
-              <Link className="navlink" to="/">
-                <RoomServiceIcon className="navicon" />
-                Services
-              </Link>
-              <Link className="navlink" to="/">
-                <WorkspacesIcon className="navicon" />
-                Works
-              </Link>
-              <Link className="navlink" to="/">
-                <CallIcon className="navicon" />
-                Contact
+              <Link className="navlink" style={{display:"none"}}
+               to="/">
+                <LogoutIcon className="navicon" />
+                Logout
               </Link>
             </div>
             </div>

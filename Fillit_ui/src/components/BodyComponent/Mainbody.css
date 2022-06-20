@@ -81,7 +81,7 @@
   }
   
   .navbar-menu a:hover{
-    color: tomato !important;
+    color: #9879db !important;
   }
   
   .sticky{
@@ -188,14 +188,13 @@
       flex-direction: row;
       padding: 5px;
       align-items: center;
-      justify-content: center;
   }
   .navicon{
       margin-left: -12px;
       margin-right: 12px;
   }
   
-  @media screen and (max-width: 980px){
+  @media screen and (max-width: 1100px){
     .menu-toggler{
       display: block;
     }
@@ -213,9 +212,9 @@
     }
   
     .navbar-menu a{
-      display: block;
+      display: flex;
       font-size: 20px;
-      margin: 12px 0;
+      margin: 10px 0;
     }
   
     .sticky .navbar-menu{

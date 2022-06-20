@@ -32,14 +32,16 @@ const Mainbody = () => {
               <Link to="/" className="icons"><YouTubeIcon/></Link>
             </div>
             <div className="buttons">
-              <Link to="/">Get Started</Link>
-              <Link to="/">Read More</Link>
+              <Link to="/myforms">Get Started</Link>
+              <a href="#content">Read More</a>
             </div>
           </div>
         </div>
       </section>
       {/* <About/> */}
-      <Section1/>
+      <div id="content">
+        <Section1/>
+      </div>
       <Section2/>
       <Section3/>
       <Contact/>
