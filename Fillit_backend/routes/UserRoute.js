@@ -10,7 +10,8 @@ const {
   getUserDetails,
   getReview,
 } = require("../controllers/userControllers");
-const { isAuthenticatedUser } = require("../middleware/isAuthenticated");
+// const { isAuthenticatedUser, authorizeRoles } = require("../middleware/isAuthenticated");
+const { authorizeUser } = require("../middleware/authorizeRole");
 const router = express.Router();
 
 router.route("/contact").post(getReview);
@@ -19,9 +20,9 @@ router.route("/login").post(loginUser);
 router.route("/password/forgot").post(forgotPassword);
 router.route("/password/reset/:Token").put(resetPassword);
 router.route("/logout").get(logout);
-router.route("/me").get(isAuthenticatedUser, getUserDetails);
-router.route("/password/update").put(isAuthenticatedUser, updatePassword);
-router.route("/me/update").put(isAuthenticatedUser, updateProfile);
+router.route("/me").get(authorizeUser, getUserDetails);
+router.route("/password/update").put(authorizeUser, updatePassword);
+router.route("/me/update").put(authorizeUser, updateProfile);
 
 module.exports = router;
  

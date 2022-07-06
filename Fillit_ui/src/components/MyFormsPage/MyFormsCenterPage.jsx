@@ -9,11 +9,18 @@ import ShareIcon from "@mui/icons-material/Share";
 import DeleteIcon from "@mui/icons-material/Delete";
 import ClickAwayListener from "@mui/base/ClickAwayListener";
 import LockIcon from "@mui/icons-material/Lock";
+import Avatar from "@mui/material/Avatar"
+// import AvatarImg from '../../assets/image/user-Img/Profile.png'
 import { IconButton } from "@mui/material";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { loadUser } from "../../actions/userAction";
+import Loader from "../utils/Loader/Loader";
 
 const CardBox = ({ name, lock, responses, date }) => {
+  
   const [dropDownShow, setdropDownShow] = useState(false);
   const [LockState, setLockState] = useState(lock);
   const handleLock = () => {
@@ -115,12 +122,19 @@ const CardBox = ({ name, lock, responses, date }) => {
 };
 
 const MyFormsCenterPage = (props) => {
-  // console.log(props.data.length);
-  // console.log(props.data);
   const navigate=useNavigate();
+  const dispatch = useDispatch();
   const count = props.data.length;
+  const {user} = useSelector((state)=>state.user);
+  console.log(user);
+  // useEffect(()=>{
+  //   dispatch(loadUser());
+  // },[])
   return (
     <>
+    {/* {userResponse.loading ? (
+        <Loader />
+      ) :  */}
       <div className='myform_container'>
         <div className='myform_flexrow_upr'>
           <div className='myform_upper_left'>
@@ -148,6 +162,13 @@ const MyFormsCenterPage = (props) => {
               + Create Form
             </Button>
           </div>
+          <div className="profileDetail">
+          <IconButton onClick={()=>{navigate("/account")}}>
+              
+                {/* <Avatar src={user.avatar.url!==null ? (user.avatar.url) : ("/Profile.png")} alt="failed-to-fetch" id="userLogo"/> */}
+                <Avatar src={"/Profile.png"} alt="failed-to-fetch" id="userLogo"/>
+              </IconButton>
+          </div>
         </div>
         <div
           style={{
@@ -169,6 +190,7 @@ const MyFormsCenterPage = (props) => {
           })}
         </div>
       </div>
+      {/* }     */}
     </>
   );
 };

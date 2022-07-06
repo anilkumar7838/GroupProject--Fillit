@@ -9,6 +9,7 @@ import {positions,transitions,Provider as AlertProvider} from "react-alert";
 import AlertTemplate from "react-alert-template-basic";
 
 axios.defaults.baseURL = process.env.REACT_APP_BACKEND;
+// axios.defaults.withCredentials = true;
 const options={
   timeout:5000,
   positons:positions.BOTTOM_CANTER,

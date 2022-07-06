@@ -43,6 +43,14 @@ const userSchema = mongoose.Schema({
         type: Schema.Types.ObjectId,
         ref:'formSchema',
     },
+    role:{
+        type:String,
+        default:"user",
+    },
+    createdAt:{
+        type:Date,
+        default:Date.now,
+    },
     resetPasswordToken: String,
     resetPasswordExpire: Date,
 });
@@ -69,9 +77,9 @@ userSchema.methods.comparePassword= async function(enteredPassword ){
 }
 
 // Generate Password reset Token
-userSchema.methods .getResetPasswordToken = function(){
+userSchema.methods.getResetPasswordToken = function(){
     // generate Token
-    const restToken = crypto.randomBytes(20).toString('hex');
+    const resetToken = crypto.randomBytes(20).toString('hex');
 
     // hashing and adding resetPasswordToken to userShema
     this.resetPasswordToken = crypto.createHash("sha256").update(resetToken).digest("hex");
