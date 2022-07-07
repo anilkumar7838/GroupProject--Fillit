@@ -264,6 +264,32 @@ form.sign-in-formlogin {
   font-weight: 500;
 }
 
+#registerImage > img {
+  width: 3vmax;
+  border-radius: 100%;
+}
+#registerImage > input {
+  display: flex;
+  padding: 0%;
+}
+
+#registerImage > input::file-selector-button {
+  cursor: pointer;
+  width: 100%;
+  z-index: 2;
+  border: none;
+  margin: 0%;
+  height: 100%;
+  font: 400 20px cursive;
+  transition: all 0.5s;
+  padding: 0 1vmax;
+  color: rgba(0, 0, 0, 0.623);
+  background-color: rgb(255, 255, 255);
+}
+#registerImage > input::file-selector-button:hover {
+  background-color: rgb(235, 235, 235);
+}
+
 
 /* ANIMATION */
 
@@ -404,6 +430,16 @@ form.sign-in-formlogin {
   .containerlogin.sign-up-modelogin .signin-signuplogin {
     top: 5%;
     transform: translate(-50%, 0);
+  }
+
+  #registerImage > img {
+    width: 6.2vmax;
+    border-radius: 100%;
+  }
+  
+  #registerImage > input::file-selector-button {
+    height: 7vh;
+    font: 400 1.8vmax cursive;
   }
 }
 

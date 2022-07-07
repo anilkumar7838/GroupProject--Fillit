@@ -10,6 +10,8 @@ import WorkspacesIcon from "@mui/icons-material/Workspaces";
 import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
 import LoginIcon from '@mui/icons-material/Login';
 import LogoutIcon from '@mui/icons-material/Logout';
+import { useSelector,useDispatch } from "react-redux";
+import { logout } from "../../actions/userAction";
 
 const menu=[
   {
@@ -41,18 +43,19 @@ const menu=[
 
 const Header = () => {
 
+
   const navigate= useNavigate();
+  const dispatch=useDispatch();
   const [navbar, setNavbar] = useState(false);
   const [sidebar, setSidebar] = useState(false);
 
+  const {isAuthenticated} = useSelector((state)=>state.user);
   const sidebarHandle = () => {
     setSidebar(!sidebar);
   };
   const handleClickAway = () => {
     return setSidebar(false);
   };
-
-
 
   const changeNav = () => {
     if (window.scrollY >= 20) {
@@ -61,9 +64,14 @@ const Header = () => {
       setNavbar(false);
     }
   };
-
+  
   window.addEventListener("scroll", changeNav);
 
+  function logoutUser() {
+    dispatch(logout());
+    alert.success("Logout Successfully");
+  }
+  
   return (
     <>
       <nav className={navbar ? "navbar sticky" : "navbar"}>
@@ -92,20 +100,19 @@ const Header = () => {
                 )
               })
               }
-                
-              <Link className="navlink" to="/login">
-                <AppRegistrationIcon className="navicon" />
-                SignUp
-              </Link>
+              {isAuthenticated ? (<Link className="navlink" onClick={()=>{
+                logoutUser()
+              }}
+               to="/">
+                <LogoutIcon className="navicon" />
+                Logout
+              </Link>):(
               <Link className="navlink" to="/login">
                 <LoginIcon className="navicon" />
                 Login
               </Link>
-              <Link className="navlink" style={{display:"none"}}
-               to="/">
-                <LogoutIcon className="navicon" />
-                Logout
-              </Link>
+              )}
+              
             </div>
             </div>
           </ClickAwayListener>

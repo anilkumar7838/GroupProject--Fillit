@@ -1,12 +1,22 @@
-const User = require('../models/userModel');
+const ErrorHandler = require("../utils/errorhandler");
+const catchAsyncError = require("./CatchAsyncError")
+const jwt = require("jsonwebtoken");
+const User = require("../models/userModel/userSchema");
 
-const authorizeUser = async (req,res,next) => {
-    // console.log(req.headers.authorization)
+exports.authorizeUser = catchAsyncError(async (req,res,next) => {
+    // console.log(req.headers.authorization);
     if(req.headers.authorization){
         const token = req.headers.authorization.split(" ")[1];
-        const user = await User.findOne({Token:token}).select({Transaction:0,Pin:0,Token:0,Token_created_at:0,id:0});
-        if(user){
-            req.user = user;
+        // console.log(token);
+        if(!token){
+            return next(new ErrorHandler("Please Login to access this resource",401));
+        }
+    
+        const decodedData = jwt.verify(token,process.env.JWT_SECRET);
+        if(decodedData){
+            req.user = await User.findById(decodedData.id);
+            // console.log(req.user);
+    
             next();
         }
         else{
@@ -22,5 +32,4 @@ const authorizeUser = async (req,res,next) => {
             message:"Unauthorized"
         });
     }
-}
-module.exports = authorizeUser;
+});

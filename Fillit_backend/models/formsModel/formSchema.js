@@ -40,16 +40,15 @@ const formSchema = new mongoose.Schema({
         type: String,
         required: true,
       },
+      questionImage: {type: String, default: ""},
       question: {
         type: String,
         required: true,
       },
-      options: [
-        {
-          type: String,
-          required: true,
-        },
-      ],
+      options: [{
+        optionText : String,
+        optionImage: {type: String, default: ""},
+      }],
       marks: {
         type: mongoose.Schema.Types.Decimal128,
         // required:true,

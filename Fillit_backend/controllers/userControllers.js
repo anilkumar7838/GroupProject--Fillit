@@ -3,8 +3,20 @@ const catchAsyncError=require("../middleware/catchAsyncError");
 const User=require("../models/userModel/userSchema");
 const sendToken = require("../utils/jwtToken");
 const sendEmail=require("../utils/sendEmail")
+const cloudinary = require("cloudinary");
+
+
+// cloudinary-->Fillit@2022
+
 //------- Register User -----------
 exports.registerUser = catchAsyncError(async(req,res,next)=>{
+
+    const myCloud = await cloudinary.v2.uploader.upload(req.body.avatar,{
+        folder:"avatars",
+        width:150,
+        crop:"scale",
+    })
+
     const {name,email,password}=req.body;
     // form-type not used now  
 
@@ -13,16 +25,11 @@ exports.registerUser = catchAsyncError(async(req,res,next)=>{
         email,
         password,
         avatar:{
-            public_id:"This is a sample id",
-            url:"Profile_pic_url"
+            public_id:myCloud.public_id,
+            url:myCloud.secure_url,
         }
     });
-    const token=user.getJWTToken();
-
-    res.status(201).json({
-        success:true,
-        token,
-    })
+    sendToken(user,201,res);
 });
 
 // ------- Login User --------
@@ -35,28 +42,23 @@ exports.loginUser = catchAsyncError(async(req,res,next)=>{
 
     const user=await User.findOne({email}).select("+password");
 
-    const isPasswordMatched =user.comparePassword(password);
-
-    if(!isPasswordMatched){
-        return next(new ErrorHandler("Invalid email or Password",401));
+    if(!user){
+        return next(new ErrorHandler("Invalid email or password",401));
     }
 
-    const token=user.getJWTToken();
+    const isPasswordMatched = await user.comparePassword(password);
     
-    res.status(201).json({
-        success:true,
-        token,
-    });
+    if(!isPasswordMatched){
+        return next(new ErrorHandler("Invalid email or password",401))
+    }
+    
+
+    sendToken(user,200,res);
 
 })
 
 // -------------- Logout User ---------------------
 exports.logout = catchAsyncError(async(req,res,next)=>{
-    res.cookie('token',null,{
-        expires:new Date(Date.now()),
-        httpOnly:true,
-    })
-
     res.status(200).json({
         success:true,
         message:"Logged Out",
@@ -76,7 +78,8 @@ exports.forgotPassword = catchAsyncError(async(req,res,next)=>{
 
     await user.save({validateBeforeSave:false});
 
-    const resetPasswordUrl = `${req.protocol}://${req.get("host")}/api/v1/password/reset/${resetToken}`
+    // const resetPasswordUrl = `${req.protocol}://${req.get("host")}/password/reset/${resetToken}`
+    const resetPasswordUrl = `${process.env.FRONTEND_URL}://${req.get("host")}/password/reset/${resetToken}`
 
     const message = `Your password reset token is :- \n\n ${resetPasswordUrl} \n\n If you have not requested this email then please ignore it `;
 
@@ -158,22 +161,38 @@ exports.updateProfile = catchAsyncError(async(req,res,next)=>{
         name:req.body.name,
         email:req.body.email,
     }
-    // we will add Cloudinary later
+    
+    if(req.body.avatar !== ""){
+        const user=await User.findById(req.user.id);
+        const imageId = user.avatar.public_id;
+        await cloudinary.v2.uploader.destroy(imageId);
+        const myCloud = await cloudinary.v2.uploader.upload(req.body.avatar,{
+            folder:"avatars",
+            width:150,
+            crop:"scale",
+        })
+
+        newUserData.avatar={
+            public_id:myCloud.public_id,
+            url:myCloud.secure_url,
+        }
+
+    }
     
     const user = await User.findByIdAndUpdate(req.user.id,newUserData,{new:true,runValidators:true,useFindAndModify:false});
     
     res.status(200).json({
-        succes:true,
+        success:true,
     })
 })
 
 // ----------- Get User Details ----------
 exports.getUserDetails = catchAsyncError(async(req,res,next)=>{
     const user =await User.findById(req.user.id);
-    
+    // console.log(user);
     res.status(200).json({
         success:true,
-        user
+        user,
     });
 });
 
