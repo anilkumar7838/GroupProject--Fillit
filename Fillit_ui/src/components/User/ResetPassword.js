@@ -43,7 +43,7 @@ const ResetPassword = () => {
       alert.success("Password Updated Successfully");
       navigate("/login");
     }
-  }, [dispatch, error, alert, success]);
+  }, [dispatch, error, navigate, alert, success]);
 
   return (
     <Fragment>
@@ -51,39 +51,39 @@ const ResetPassword = () => {
         <Loader />
       ) : (
         <Fragment>
-          <MetaData title="Change Password" />
-          <div className="resetPasswordContainer">
-            <div className="resetPasswordBox">
-              <h2 className="resetPasswordHeading">Update Profile</h2>
+          <MetaData title='Change Password' />
+          <div className='resetPasswordContainer'>
+            <div className='resetPasswordBox'>
+              <h2 className='resetPasswordHeading'>Update Profile</h2>
 
               <form
-                className="resetPasswordForm"
+                className='resetPasswordForm'
                 onSubmit={resetPasswordSubmit}
               >
                 <div>
                   <LockOpenIcon />
                   <input
-                    type="password"
-                    placeholder="New Password"
+                    type='password'
+                    placeholder='New Password'
                     required
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                   />
                 </div>
-                <div className="loginPassword">
+                <div className='loginPassword'>
                   <LockIcon />
                   <input
-                    type="password"
-                    placeholder="Confirm Password"
+                    type='password'
+                    placeholder='Confirm Password'
                     required
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
                   />
                 </div>
                 <input
-                  type="submit"
-                  value="Update"
-                  className="resetPasswordBtn"
+                  type='submit'
+                  value='Update'
+                  className='resetPasswordBtn'
                 />
               </form>
             </div>

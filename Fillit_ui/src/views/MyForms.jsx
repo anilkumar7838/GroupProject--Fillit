@@ -1,7 +1,6 @@
 import React from "react";
 import Header from "../components/headerComponent/header";
 import MyFormsCenterPage from "../components/MyFormsPage/MyFormsCenterPage";
-import ProtectedRoute from "../components/Route/protectedRoute";
 
 const ObjectList = [
   {

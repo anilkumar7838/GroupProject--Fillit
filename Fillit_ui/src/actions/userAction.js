@@ -13,10 +13,10 @@ import {
   UPDATE_PROFILE_REQUEST,
   UPDATE_PROFILE_SUCCESS,
   UPDATE_PROFILE_FAIL,
-  UPDATE_PROFILE_RESET,
+  // UPDATE_PROFILE_RESET,
   UPDATE_PASSWORD_REQUEST,
   UPDATE_PASSWORD_SUCCESS,
-  UPDATE_PASSWORD_RESET,
+  // UPDATE_PASSWORD_RESET,
   UPDATE_PASSWORD_FAIL,
   FORGOT_PASSWORD_REQUEST,
   FORGOT_PASSWORD_SUCCESS,
@@ -36,13 +36,9 @@ export const login = (email, password) => async (dispatch) => {
 
     const config = { headers: { "Content-Type": "application/json" } };
 
-    const { data } = await axios.post(
-      `/v1/login`,
-      { email, password },
-      config
-    );
+    const { data } = await axios.post(`/v1/login`, { email, password }, config);
     axios.defaults.headers.common.Authorization = `Bearer ${data.token}`;
-    Cookies.set("token",data.token,{expires: 5});
+    Cookies.set("token", data.token, { expires: 5 });
     dispatch({ type: LOGIN_SUCCESS, payload: data.user });
   } catch (error) {
     dispatch({ type: LOGIN_FAIL, payload: error.response.data.message });
@@ -81,18 +77,16 @@ export const loadUser = () => async (dispatch) => {
   }
 };
 
-
 // Logout User
 export const logout = () => async (dispatch) => {
   try {
     await axios.get(`/v1/logout`);
     Cookies.remove("token");
-    dispatch({ type: LOGOUT_SUCCESS});
+    dispatch({ type: LOGOUT_SUCCESS });
   } catch (error) {
     dispatch({ type: LOGOUT_FAIL, payload: error.response.data.message });
   }
 };
-
 
 // Update Profile
 export const updateProfile = (userData) => async (dispatch) => {
@@ -102,7 +96,6 @@ export const updateProfile = (userData) => async (dispatch) => {
     const config = { headers: { "Content-Type": "multipart/form-data" } };
 
     const { data } = await axios.put(`/v1/me/update`, userData, config);
-
 
     dispatch({ type: UPDATE_PROFILE_SUCCESS, payload: data.success });
   } catch (error) {
@@ -120,11 +113,7 @@ export const updatePassword = (passwords) => async (dispatch) => {
 
     const config = { headers: { "Content-Type": "application/json" } };
 
-    const { data } = await axios.put(
-      `/v1/password/update`,
-      passwords,
-      config
-    );
+    const { data } = await axios.put(`/v1/password/update`, passwords, config);
 
     dispatch({ type: UPDATE_PASSWORD_SUCCESS, payload: data.success });
   } catch (error) {

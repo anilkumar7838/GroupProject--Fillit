@@ -1,17 +1,18 @@
-import './headerForm1.css';
-import { ReactComponent as BellIcon } from '../../assets/icons/bell.svg';
-import { ReactComponent as MessengerIcon } from '../../assets/icons/messenger.svg';
-import { ReactComponent as CaretIcon } from '../../assets/icons/caret.svg';
-import { ReactComponent as PlusIcon } from '../../assets/icons/plus.svg';
-import { ReactComponent as CogIcon } from '../../assets/icons/cog.svg';
-import { ReactComponent as ChevronIcon } from '../../assets/icons/chevron.svg';
-import { ReactComponent as ArrowIcon } from '../../assets/icons/arrow.svg';
-import { ReactComponent as BoltIcon } from '../../assets/icons/bolt.svg';
+import "./headerForm1.css";
+import { ReactComponent as BellIcon } from "../../assets/icons/bell.svg";
+import { ReactComponent as MessengerIcon } from "../../assets/icons/messenger.svg";
+import { ReactComponent as CaretIcon } from "../../assets/icons/caret.svg";
+import { ReactComponent as PlusIcon } from "../../assets/icons/plus.svg";
+import { ReactComponent as CogIcon } from "../../assets/icons/cog.svg";
+import { ReactComponent as ChevronIcon } from "../../assets/icons/chevron.svg";
+import { ReactComponent as ArrowIcon } from "../../assets/icons/arrow.svg";
+import { ReactComponent as BoltIcon } from "../../assets/icons/bolt.svg";
 
-import React, { useState, useEffect, useRef } from 'react';
-import { CSSTransition } from 'react-transition-group';
+import React, { useState, useEffect, useRef } from "react";
+import { CSSTransition } from "react-transition-group";
+import { Link } from "react-router-dom";
 
-const HeaderForm1= ()=>{
+const HeaderForm1 = () => {
   return (
     <Navbar>
       <NavItem icon={<PlusIcon />} />
@@ -23,12 +24,12 @@ const HeaderForm1= ()=>{
       </NavItem>
     </Navbar>
   );
-}
+};
 
 function Navbar(props) {
   return (
-    <nav className="build-navbar">
-      <ul className="navbar-nav">{props.children}</ul>
+    <nav className='build-navbar'>
+      <ul className='navbar-nav'>{props.children}</ul>
     </nav>
   );
 }
@@ -37,10 +38,10 @@ function NavItem(props) {
   const [open, setOpen] = useState(false);
 
   return (
-    <li className="nav-item">
-      <a href="#" className="icon-button" onClick={() => setOpen(!open)}>
+    <li className='nav-item'>
+      <Link to='#' className='icon-button' onClick={() => setOpen(!open)}>
         {props.icon}
-      </a>
+      </Link>
 
       {open && props.children}
     </li>
@@ -48,13 +49,13 @@ function NavItem(props) {
 }
 
 function DropdownMenu() {
-  const [activeMenu, setActiveMenu] = useState('main');
+  const [activeMenu, setActiveMenu] = useState("main");
   const [menuHeight, setMenuHeight] = useState(null);
   const dropdownRef = useRef(null);
 
   useEffect(() => {
-    setMenuHeight(dropdownRef.current?.firstChild.offsetHeight)
-  }, [])
+    setMenuHeight(dropdownRef.current?.firstChild.offsetHeight);
+  }, []);
 
   function calcHeight(el) {
     const height = el.offsetHeight;
@@ -63,42 +64,48 @@ function DropdownMenu() {
 
   function DropdownItem(props) {
     return (
-      <a href="#" className="menu-item" onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}>
-        <span className="icon-button">{props.leftIcon}</span>
+      <Link
+        to='#'
+        className='menu-item'
+        onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}
+      >
+        <span className='icon-button'>{props.leftIcon}</span>
         {props.children}
-        <span className="icon-right">{props.rightIcon}</span>
-      </a>
+        <span className='icon-right'>{props.rightIcon}</span>
+      </Link>
     );
   }
 
   return (
-    <div className="dropdown" style={{ height: menuHeight }} ref={dropdownRef}>
-
+    <div className='dropdown' style={{ height: menuHeight }} ref={dropdownRef}>
       <CSSTransition
-        in={activeMenu === 'main'}
+        in={activeMenu === "main"}
         timeout={500}
-        classNames="menu-primary"
+        classNames='menu-primary'
         unmountOnExit
-        onEnter={calcHeight}>
-        <div className="menu">
+        onEnter={calcHeight}
+      >
+        <div className='menu'>
           <DropdownItem>My Profile</DropdownItem>
           <DropdownItem
             leftIcon={<CogIcon />}
             rightIcon={<ChevronIcon />}
-            goToMenu="settings">
+            goToMenu='settings'
+          >
             Settings
           </DropdownItem>
         </div>
       </CSSTransition>
 
       <CSSTransition
-        in={activeMenu === 'settings'}
+        in={activeMenu === "settings"}
         timeout={500}
-        classNames="menu-secondary"
+        classNames='menu-secondary'
         unmountOnExit
-        onEnter={calcHeight}>
-        <div className="menu">
-          <DropdownItem goToMenu="main" leftIcon={<ArrowIcon />}>
+        onEnter={calcHeight}
+      >
+        <div className='menu'>
+          <DropdownItem goToMenu='main' leftIcon={<ArrowIcon />}>
             <h2>My Tutorial</h2>
           </DropdownItem>
           <DropdownItem leftIcon={<BoltIcon />}>HTML</DropdownItem>

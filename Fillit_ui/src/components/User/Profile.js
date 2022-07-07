@@ -7,15 +7,14 @@ import Header from "../headerComponent/header";
 import "./Profile.css";
 
 const Profile = () => {
-  const navigate=useNavigate();
+  const navigate = useNavigate();
   const userRes = useSelector((state) => state.user);
-  
+
   useEffect(() => {
     if (!userRes.isAuthenticated) {
       navigate("/login");
     }
-
-  }, [userRes.isAuthenticated]);
+  }, [userRes.isAuthenticated, navigate]);
   return (
     <Fragment>
       {userRes.loading ? (
@@ -23,12 +22,12 @@ const Profile = () => {
       ) : (
         <Fragment>
           <MetaData title={`${userRes.user.name}'s Profile`} />
-          <Header/>
-          <div className="profileContainer">
+          <Header />
+          <div className='profileContainer'>
             <div>
               <h1>My Profile</h1>
               <img src={userRes.user.avatar.url} alt={userRes.user.name} />
-              <Link to="/me/update">Edit Profile</Link>
+              <Link to='/me/update'>Edit Profile</Link>
             </div>
             <div>
               <div>
@@ -45,8 +44,8 @@ const Profile = () => {
               </div>
 
               <div>
-                <Link to="/myforms" >My Forms</Link>
-                <Link to="/password/update">Change Password</Link>
+                <Link to='/myforms'>My Forms</Link>
+                <Link to='/password/update'>Change Password</Link>
               </div>
             </div>
           </div>

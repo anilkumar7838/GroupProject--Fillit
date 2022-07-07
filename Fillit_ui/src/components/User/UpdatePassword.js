@@ -14,7 +14,7 @@ import { useNavigate } from "react-router-dom";
 const UpdatePassword = () => {
   const dispatch = useDispatch();
   const alert = useAlert();
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
   const { error, isUpdated, loading } = useSelector((state) => state.profile);
 
@@ -49,7 +49,7 @@ const UpdatePassword = () => {
         type: UPDATE_PASSWORD_RESET,
       });
     }
-  }, [dispatch, error, alert,isUpdated]);
+  }, [dispatch, error, navigate, alert, isUpdated]);
 
   return (
     <Fragment>
@@ -57,50 +57,50 @@ const UpdatePassword = () => {
         <Loader />
       ) : (
         <Fragment>
-          <MetaData title="Change Password" />
-          <div className="updatePasswordContainer">
-            <div className="updatePasswordBox">
-              <h2 className="updatePasswordHeading">Update Profile</h2>
+          <MetaData title='Change Password' />
+          <div className='updatePasswordContainer'>
+            <div className='updatePasswordBox'>
+              <h2 className='updatePasswordHeading'>Update Profile</h2>
 
               <form
-                className="updatePasswordForm"
+                className='updatePasswordForm'
                 onSubmit={updatePasswordSubmit}
               >
-                <div className="loginPassword">
+                <div className='loginPassword'>
                   <VpnKeyIcon />
                   <input
-                    type="password"
-                    placeholder="Old Password"
+                    type='password'
+                    placeholder='Old Password'
                     required
                     value={oldPassword}
                     onChange={(e) => setOldPassword(e.target.value)}
                   />
                 </div>
 
-                <div className="loginPassword">
+                <div className='loginPassword'>
                   <LockOpenIcon />
                   <input
-                    type="password"
-                    placeholder="New Password"
+                    type='password'
+                    placeholder='New Password'
                     required
                     value={newPassword}
                     onChange={(e) => setNewPassword(e.target.value)}
                   />
                 </div>
-                <div className="loginPassword">
+                <div className='loginPassword'>
                   <LockIcon />
                   <input
-                    type="password"
-                    placeholder="Confirm Password"
+                    type='password'
+                    placeholder='Confirm Password'
                     required
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
                   />
                 </div>
                 <input
-                  type="submit"
-                  value="Change"
-                  className="updatePasswordBtn"
+                  type='submit'
+                  value='Change'
+                  className='updatePasswordBtn'
                 />
               </form>
             </div>

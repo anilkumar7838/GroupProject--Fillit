@@ -79,7 +79,13 @@ const Loginpage = () => {
     if (userResponse.isAuthenticated) {
       navigate(`/myforms`);
     }
-  }, [dispatch, userResponse.error, alert, userResponse.isAuthenticated]);
+  }, [
+    dispatch,
+    navigate,
+    userResponse.error,
+    alert,
+    userResponse.isAuthenticated,
+  ]);
 
   return (
     <>

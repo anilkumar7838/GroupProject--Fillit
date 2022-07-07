@@ -11,7 +11,6 @@ import FormType1 from "./components/FomBuilder/formType1";
 
 import dataStore from "./dataStore";
 import { loadUser } from "./actions/userAction";
-import { useSelector } from "react-redux";
 import Profile from "./components/User/Profile";
 import ProtectedRoute from "./components/Route/protectedRoute";
 import UpdateProfile from "./components/User/UpdateProfile";

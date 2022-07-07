@@ -12,7 +12,7 @@ import { useNavigate } from "react-router-dom";
 
 const UpdateProfile = () => {
   const dispatch = useDispatch();
-  const navigate= useNavigate();
+  const navigate = useNavigate();
   const alert = useAlert();
 
   const { user } = useSelector((state) => state.user);
@@ -62,7 +62,7 @@ const UpdateProfile = () => {
 
     if (isUpdated) {
       alert.success("Profile Updated Successfully");
-      
+
       dispatch(loadUser());
       navigate("/account");
 
@@ -70,59 +70,59 @@ const UpdateProfile = () => {
         type: UPDATE_PROFILE_RESET,
       });
     }
-  }, [dispatch, error, alert, user, isUpdated]);
+  }, [dispatch, error, alert, user, navigate, isUpdated]);
   return (
     <Fragment>
       {loading ? (
         <Loader />
       ) : (
         <Fragment>
-          <MetaData title="Update Profile" />
-          <div className="updateProfileContainer">
-            <div className="updateProfileBox">
-              <h2 className="updateProfileHeading">Update Profile</h2>
+          <MetaData title='Update Profile' />
+          <div className='updateProfileContainer'>
+            <div className='updateProfileBox'>
+              <h2 className='updateProfileHeading'>Update Profile</h2>
 
               <form
-                className="updateProfileForm"
-                encType="multipart/form-data"
+                className='updateProfileForm'
+                encType='multipart/form-data'
                 onSubmit={updateProfileSubmit}
               >
-                <div className="updateProfileName">
+                <div className='updateProfileName'>
                   <FaceIcon />
                   <input
-                    type="text"
-                    placeholder="Name"
+                    type='text'
+                    placeholder='Name'
                     required
-                    name="name"
+                    name='name'
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                   />
                 </div>
-                <div className="updateProfileEmail">
+                <div className='updateProfileEmail'>
                   <MailOutlineIcon />
                   <input
-                    type="email"
-                    placeholder="Email"
+                    type='email'
+                    placeholder='Email'
                     required
-                    name="email"
+                    name='email'
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
 
-                <div id="updateProfileImage">
-                  <img src={avatarPreview} alt="Avatar Preview" />
+                <div id='updateProfileImage'>
+                  <img src={avatarPreview} alt='Avatar Preview' />
                   <input
-                    type="file"
-                    name="avatar"
-                    accept="image/*"
+                    type='file'
+                    name='avatar'
+                    accept='image/*'
                     onChange={updateProfileDataChange}
                   />
                 </div>
                 <input
-                  type="submit"
-                  value="Update"
-                  className="updateProfileBtn"
+                  type='submit'
+                  value='Update'
+                  className='updateProfileBtn'
                 />
               </form>
             </div>

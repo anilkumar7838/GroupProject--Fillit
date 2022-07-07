@@ -5,10 +5,11 @@ import DropDown from "../utils/DrpoDown/DropDown";
 import SaveIcon from "@mui/icons-material/Save";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
-import Form from "../RegistrationForm/form";
-import { Button, Container, TextField } from "@mui/material";
+// import Form from "../RegistrationForm/form";
+import { Button, Container } from "@mui/material";
 import Inputfields1 from "../utils/inputFields/inputfields1";
 import { UserContext } from "../utils/DrpoDown/DropDown";
+import { Link } from "react-router-dom";
 
 const FormType1 = () => {
   const idx = useContext(UserContext);
@@ -24,7 +25,7 @@ const FormType1 = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Inputfield", inputFields);
+    // console.log("Inputfield", inputFields);
   };
 
   const handleAddField = () => {
@@ -39,68 +40,68 @@ const FormType1 = () => {
 
   return (
     <>
-      <div className="form-builder">
-        <div className="primary-header">
+      <div className='form-builder'>
+        <div className='primary-header'>
           <HeaderForm1 />
         </div>
-        <div className="secondary">
-          <div className="slideMenu">
-            <div class="build-wrapper">
-              <input type="checkbox" id="btn" hidden />
-              <label for="btn" class="menu-btn">
-                <MenuIcon className="i-menu" />
-                <CloseIcon className="i-close" />
+        <div className='secondary'>
+          <div className='slideMenu'>
+            <div class='build-wrapper'>
+              <input type='checkbox' id='btn' hidden />
+              <label for='btn' class='menu-btn'>
+                <MenuIcon className='i-menu' />
+                <CloseIcon className='i-close' />
               </label>
-              <nav id="build-sidebar">
-                <div class="build-title">Side Menu</div>
-                <ul class="build-list-items">
+              <nav id='build-sidebar'>
+                <div class='build-title'>Side Menu</div>
+                <ul class='build-list-items'>
                   <li>
-                    <a href="#">
+                    <Link to='#'>
                       <DropDown />
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#">
+                    <Link to='#'>
                       <DropDown />
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#">
+                    <Link to='#'>
                       <DropDown />
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#">
+                    <Link to='#'>
                       <DropDown />
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#">
+                    <Link to='#'>
                       <DropDown />
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#">
+                    <Link to='#'>
                       <DropDown />
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#">
+                    <Link to='#'>
                       <DropDown />
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#">
+                    <Link to='#'>
                       <DropDown />
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </nav>
             </div>
           </div>
-          <div className="dynamicForm">
+          <div className='dynamicForm'>
             <Container>
-              <form className="form-build" onSubmit={handleSubmit}>
+              <form className='form-build' onSubmit={handleSubmit}>
                 {inputFields.map((inputField, i) => {
                   return (
                     <div key={i}>
@@ -127,10 +128,10 @@ const FormType1 = () => {
             </Container>
           </div>
           <Button
-            className="save-btn"
-            variant="contained"
-            color="primary"
-            type="submit"
+            className='save-btn'
+            variant='contained'
+            color='primary'
+            type='submit'
             onClick={handleSubmit}
           >
             <SaveIcon />

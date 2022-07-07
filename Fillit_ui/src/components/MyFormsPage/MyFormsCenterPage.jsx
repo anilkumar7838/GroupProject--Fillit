@@ -14,11 +14,12 @@ import Avatar from "@mui/material/Avatar";
 import { IconButton } from "@mui/material";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import { loadUser } from "../../actions/userAction";
+import { useSelector } from "react-redux";
+// import { useDispatch, useSelector } from "react-redux";
+// import { useEffect } from "react";
+// import { loadUser } from "../../actions/userAction";
 import Loader from "../utils/Loader/Loader";
-import ProtectedRoute from "../Route/protectedRoute";
+// import ProtectedRoute from "../Route/protectedRoute";
 
 const CardBox = ({ name, lock, responses, date }) => {
   const [dropDownShow, setdropDownShow] = useState(false);
@@ -123,7 +124,7 @@ const CardBox = ({ name, lock, responses, date }) => {
 
 const MyFormsCenterPage = (props) => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const count = props.data.length;
   const { user } = useSelector((state) => state.user);
   // useEffect(()=>{
