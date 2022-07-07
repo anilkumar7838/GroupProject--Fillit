@@ -14,7 +14,7 @@ const Loginpage = () => {
   const dispatch = useDispatch();
   const alert = useAlert();
   const navigate = useNavigate();
-  
+
   const toggleswitch = () => {
     setswitchtoggled(!switchtoggled);
   };
@@ -32,7 +32,7 @@ const Loginpage = () => {
 
   const [avatar, setAvatar] = useState("/Profile.png");
   const [avatarPreview, setAvatarPreview] = useState("/Profile.png");
-  const { name, email, password ,token} = user;
+  const { name, email, password, token } = user;
 
   const loginSubmit = (e) => {
     e.preventDefault();
@@ -43,7 +43,7 @@ const Loginpage = () => {
 
   const registerSubmit = (e) => {
     e.preventDefault();
-    
+
     const myForm = new FormData();
 
     myForm.set("name", name);
@@ -87,7 +87,7 @@ const Loginpage = () => {
         <Loader />
       ) : (
         <>
-          <Header/>
+          <Header />
           <div
             className={
               switchtoggled
@@ -95,115 +95,132 @@ const Loginpage = () => {
                 : "containerlogin sign-up-modelogin"
             }
           >
-            <div className="forms-containerlogin">
-              <div className="signin-signuplogin">
-                <form onSubmit={loginSubmit} className="sign-in-formlogin">
-                  <h2 className="titlelogin">Sign in</h2>
-                  <div className="input-fieldlogin">
-                    <i className="fas fa-user"></i>
-                    <input type="text" placeholder="Username"
-                    required
-                    value={loginEmail}
-                    onChange={(e) => setLoginEmail(e.target.value)} />
+            <div className='forms-containerlogin'>
+              <div className='signin-signuplogin'>
+                <form onSubmit={loginSubmit} className='sign-in-formlogin'>
+                  <h2 className='titlelogin'>Sign in</h2>
+                  <div className='input-fieldlogin'>
+                    <i className='fas fa-user'></i>
+                    <input
+                      type='text'
+                      placeholder='Username'
+                      required
+                      value={loginEmail}
+                      onChange={(e) => setLoginEmail(e.target.value)}
+                    />
                   </div>
-                  <div className="input-fieldlogin">
-                    <i className="fas fa-lock"></i>
-                    <input type="password" placeholder="Password"
-                    required
-                    value={loginPassword}
-                    onChange={(e) => setLoginPassword(e.target.value)} />
+                  <div className='input-fieldlogin'>
+                    <i className='fas fa-lock'></i>
+                    <input
+                      type='password'
+                      placeholder='Password'
+                      required
+                      value={loginPassword}
+                      onChange={(e) => setLoginPassword(e.target.value)}
+                    />
                   </div>
-                  <Link to="/password/forgot" style={{color:"white"}}>Forget Password ?</Link>
+                  <Link to='/password/forgot' style={{ color: "white" }}>
+                    Forget Password ?
+                  </Link>
                   <input
-                    type="submit"
-                    value="Login"
-                    className="btnlogin solidlogin"
+                    type='submit'
+                    value='Login'
+                    className='btnlogin solidlogin'
                   />
-                  <p className="social-textlogin">
+                  <p className='social-textlogin'>
                     Or Sign in with social platforms
                   </p>
-                  <div className="social-medialogin">
-                    <Link to="/" className="social-iconlogin">
-                      <i className="fab fa-facebook-f"></i>
+                  <div className='social-medialogin'>
+                    <Link to='/' className='social-iconlogin'>
+                      <i className='fab fa-facebook-f'></i>
                     </Link>
-                    <Link to="/" className="social-iconlogin">
-                      <i className="fab fa-twitter"></i>
+                    <Link to='/' className='social-iconlogin'>
+                      <i className='fab fa-twitter'></i>
                     </Link>
-                    <Link to="/" className="social-iconlogin">
-                      <i className="fab fa-google"></i>
+                    <Link to='/' className='social-iconlogin'>
+                      <i className='fab fa-google'></i>
                     </Link>
-                    <Link to="/" className="social-iconlogin">
-                      <i className="fab fa-linkedin-in"></i>
+                    <Link to='/' className='social-iconlogin'>
+                      <i className='fab fa-linkedin-in'></i>
                     </Link>
                   </div>
                 </form>
-                <form onSubmit={registerSubmit} className="sign-up-formlogin">
-                  <h2 className="titlelogin">Sign up</h2>
-                  <div className="input-fieldlogin">
-                    <i className="fas fa-user"></i>
-                    <input type="text" placeholder="Username"
-                    required
-                    name="name"
-                    value={name}
-                    onChange={registerDataChange} />
+                <form onSubmit={registerSubmit} className='sign-up-formlogin'>
+                  <h2 className='titlelogin'>Sign up</h2>
+                  <div className='input-fieldlogin'>
+                    <i className='fas fa-user'></i>
+                    <input
+                      type='text'
+                      placeholder='Username'
+                      required
+                      name='name'
+                      value={name}
+                      onChange={registerDataChange}
+                    />
                   </div>
-                  <div className="input-fieldlogin">
-                    <i className="fas fa-envelope"></i>
-                    <input type="email" placeholder="Email"
-                    required
-                    name="email"
-                    value={email}
-                    onChange={registerDataChange} />
+                  <div className='input-fieldlogin'>
+                    <i className='fas fa-envelope'></i>
+                    <input
+                      type='email'
+                      placeholder='Email'
+                      required
+                      name='email'
+                      value={email}
+                      onChange={registerDataChange}
+                    />
                   </div>
-                  <div className="input-fieldlogin">
-                    <i className="fas fa-lock"></i>
-                    <input type="password" placeholder="Password"
-                    required
-                    name="password"
-                    value={password}
-                    onChange={registerDataChange} />
+                  <div className='input-fieldlogin'>
+                    <i className='fas fa-lock'></i>
+                    <input
+                      type='password'
+                      placeholder='Password'
+                      required
+                      name='password'
+                      value={password}
+                      onChange={registerDataChange}
+                    />
                   </div>
-                  <div id="registerImage" className="input-fieldlogin">
-                  <img src={avatarPreview} alt="Avatar Preview" />
-                  <input
-                    type="file"
-                    name="avatar"
-                    accept="image/*"
-                    onChange={registerDataChange}
-                  />
-                </div>
-                  <input type="submit" className="btnlogin" value="Sign up" />
-                  <p className="social-textlogin">
+                  <div id='registerImage' className='input-fieldlogin'>
+                    <img src={avatarPreview} alt='Avatar Preview' />
+                    <input
+                      type='file'
+                      name='avatar'
+                      accept='image/*'
+                      onChange={registerDataChange}
+                    />
+                  </div>
+                  <input type='submit' className='btnlogin' value='Sign up' />
+                  <p className='social-textlogin'>
                     Or Sign up with social platforms
                   </p>
-                  <div className="social-medialogin">
-                    <Link to="/" className="social-iconlogin">
-                      <i className="fab fa-facebook-f"></i>
+                  <div className='social-medialogin'>
+                    <Link to='/' className='social-iconlogin'>
+                      <i className='fab fa-facebook-f'></i>
                     </Link>
-                    <Link to="/" className="social-iconlogin">
-                      <i className="fab fa-twitter"></i>
+                    <Link to='/' className='social-iconlogin'>
+                      <i className='fab fa-twitter'></i>
                     </Link>
-                    <Link to="/" className="social-iconlogin">
-                      <i className="fab fa-google"></i>
+                    <Link to='/' className='social-iconlogin'>
+                      <i className='fab fa-google'></i>
                     </Link>
-                    <Link to="/" className="social-iconlogin">
-                      <i className="fab fa-linkedin-in"></i>
+                    <Link to='/' className='social-iconlogin'>
+                      <i className='fab fa-linkedin-in'></i>
                     </Link>
                   </div>
                 </form>
               </div>
             </div>
-            <div className="panels-containerlogin">
-              <div className="panellogin left-panellogin">
-                <div className="contentlogin">
+            <div className='panels-containerlogin'>
+              <div className='panellogin left-panellogin'>
+                <div className='contentlogin'>
                   <h3>New here ?</h3>
                   <p>
                     Tum Jo Aaye Meri Website Mein Baat Ban Gayi Ishq Mazhab Ishq
                     Meri Zaat Ban Gayi!
                   </p>
                   <button
-                    className="btnlogin transparentlogin"
-                    id="sign-up-btnlogin"
+                    className='btnlogin transparentlogin'
+                    id='sign-up-btnlogin'
                     onClick={toggleswitch}
                   >
                     Sign up
@@ -211,33 +228,33 @@ const Loginpage = () => {
                 </div>
               </div>
 
-              <div className="panels-containerlogin">
-                <div className="panellogin left-panellogin">
-                  <div className="contentlogin">
+              <div className='panels-containerlogin'>
+                <div className='panellogin left-panellogin'>
+                  <div className='contentlogin'>
                     <h3>New here ?</h3>
                     <p>
                       Tum Jo Aaye Meri Website Mein Baat Ban Gayi Ishq Mazhab
                       Ishq Meri Zaat Ban Gayi!
                     </p>
                     <button
-                      className="btnlogin transparentlogin"
-                      id="sign-up-btnlogin"
+                      className='btnlogin transparentlogin'
+                      id='sign-up-btnlogin'
                       onClick={toggleswitch}
                     >
                       Sign up
                     </button>
                   </div>
                 </div>
-                <div className="panellogin right-panellogin">
-                  <div className="contentlogin">
+                <div className='panellogin right-panellogin'>
+                  <div className='contentlogin'>
                     <h3>One of us ?</h3>
                     <p>
                       Kundi mat khadkao raja Seedha login karo raja Phool bicha
                       perfume laga ke Mood banao taaja taaja
                     </p>
                     <button
-                      className="btnlogin transparentlogin"
-                      id="sign-in-btnlogin"
+                      className='btnlogin transparentlogin'
+                      id='sign-in-btnlogin'
                       onClick={toggleswitch}
                     >
                       Sign in

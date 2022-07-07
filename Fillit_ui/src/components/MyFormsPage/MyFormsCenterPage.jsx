@@ -9,7 +9,7 @@ import ShareIcon from "@mui/icons-material/Share";
 import DeleteIcon from "@mui/icons-material/Delete";
 import ClickAwayListener from "@mui/base/ClickAwayListener";
 import LockIcon from "@mui/icons-material/Lock";
-import Avatar from "@mui/material/Avatar"
+import Avatar from "@mui/material/Avatar";
 // import AvatarImg from '../../assets/image/user-Img/Profile.png'
 import { IconButton } from "@mui/material";
 import { Button } from "@mui/material";
@@ -18,9 +18,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { loadUser } from "../../actions/userAction";
 import Loader from "../utils/Loader/Loader";
+import ProtectedRoute from "../Route/protectedRoute";
 
 const CardBox = ({ name, lock, responses, date }) => {
-  
   const [dropDownShow, setdropDownShow] = useState(false);
   const [LockState, setLockState] = useState(lock);
   const handleLock = () => {
@@ -122,75 +122,85 @@ const CardBox = ({ name, lock, responses, date }) => {
 };
 
 const MyFormsCenterPage = (props) => {
-  const navigate=useNavigate();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const count = props.data.length;
-  const {user} = useSelector((state)=>state.user);
-  console.log(user);
+  const { user } = useSelector((state) => state.user);
   // useEffect(()=>{
   //   dispatch(loadUser());
   // },[])
   return (
     <>
-    {/* {userResponse.loading ? (
+      {user.loading ? (
         <Loader />
-      ) :  */}
-      <div className='myform_container'>
-        <div className='myform_flexrow_upr'>
-          <div className='myform_upper_left'>
-            <h2>My Forms</h2>
-            <div style={{ color: "grey" }}>Total Count : {count}</div>
-          </div>
-          <div className='myforms_upper_right'>
-            <IconButton className='myforms_icon_btn'>
-              <SearchIcon className='myforms_icon' />
-            </IconButton>
-            <IconButton className='myforms_icon_btn'>
-              <FilterAltOutlinedIcon className='myforms_icon' />
-            </IconButton>
-          </div>
-          <div>
-            <Button
-              sx={{
-                color: "white",
-                bgcolor: "red",
-              }}
-              color='error'
-              variant='contained'
-              onClick={()=>{navigate("/build")}}
-            >
-              + Create Form
-            </Button>
-          </div>
-          <div className="profileDetail">
-          <IconButton onClick={()=>{navigate("/account")}}>
-              
-                {/* <Avatar src={user.avatar.url!==null ? (user.avatar.url) : ("/Profile.png")} alt="failed-to-fetch" id="userLogo"/> */}
-                <Avatar src={"/Profile.png"} alt="failed-to-fetch" id="userLogo"/>
+      ) : (
+        <div className='myform_container'>
+          <div className='myform_flexrow_upr'>
+            <div className='myform_upper_left'>
+              <h2>My Forms</h2>
+              <div style={{ color: "grey" }}>Total Count : {count}</div>
+            </div>
+            <div className='myforms_upper_right'>
+              <IconButton className='myforms_icon_btn'>
+                <SearchIcon className='myforms_icon' />
               </IconButton>
+              <IconButton className='myforms_icon_btn'>
+                <FilterAltOutlinedIcon className='myforms_icon' />
+              </IconButton>
+            </div>
+            <div>
+              <Button
+                sx={{
+                  color: "white",
+                  bgcolor: "red",
+                }}
+                color='error'
+                variant='contained'
+                onClick={() => {
+                  navigate("/build");
+                }}
+              >
+                + Create Form
+              </Button>
+            </div>
+            <div className='profileDetail'>
+              <IconButton
+                onClick={() => {
+                  navigate("/account");
+                }}
+              >
+                <Avatar
+                  src={
+                    user.avatar.url !== null ? user.avatar.url : "/Profile.png"
+                  }
+                  alt='failed-to-fetch'
+                  id='userLogo'
+                />
+              </IconButton>
+            </div>
+          </div>
+
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              justifyContent: "center",
+            }}
+          >
+            {props.data.map((instant) => {
+              return (
+                <CardBox
+                  key={instant.id}
+                  name={instant.Name}
+                  date={instant.date}
+                  responses={instant.responses}
+                  lock={instant.lock}
+                />
+              );
+            })}
           </div>
         </div>
-        <div
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "center",
-          }}
-        >
-          {props.data.map((instant) => {
-            return (
-              <CardBox
-                key={instant.id}
-                name={instant.Name}
-                date={instant.date}
-                responses={instant.responses}
-                lock={instant.lock}
-              />
-            );
-          })}
-        </div>
-      </div>
-      {/* }     */}
+      )}
     </>
   );
 };
