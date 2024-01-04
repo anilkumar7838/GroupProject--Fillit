@@ -1,20 +1,18 @@
+
 import React,{useState} from 'react'
+import Header from '../headerComponent/header';
 import "./Loginpage.css"
 
-
-
-
 const Loginpage = () => {
-  const[switchtoggled,setswitchtoggled]=useState(true);
+  const [switchtoggled, setswitchtoggled] = useState(true);
 
-  const toggleswitch=()=>{
-
-    setswitchtoggled(!switchtoggled) ;
-  }
+  const toggleswitch = () => {
+    setswitchtoggled(!switchtoggled);
+  };
 
   return (
-    
     <>
+      <Header style={{backgroundColor:"#333"}}/>
       <div class={switchtoggled ? "containerlogin" : "containerlogin sign-up-modelogin"} >
       <div class="forms-containerlogin">
         <div class="signin-signuplogin">
@@ -78,7 +76,6 @@ const Loginpage = () => {
           </form>
         </div>
       </div>
-
       <div class="panels-containerlogin">
         <div class="panellogin left-panellogin">
           <div class="contentlogin">
@@ -91,30 +88,46 @@ const Loginpage = () => {
               Sign up
             </button>
           </div>
-          
         </div>
-        <div class="panellogin right-panellogin">
-          <div class="contentlogin">
-            <h3>One of us ?</h3>
-            <p>
-            Kundi mat khadkao raja
-            Seedha login karo raja
-            Phool bicha perfume laga ke
-            Mood banao taaja taaja
 
-
-            </p>
-            <button class="btnlogin transparentlogin" id="sign-in-btnlogin" onClick={toggleswitch}>
-              Sign in
-            </button>
+        <div className='panels-containerlogin'>
+          <div className='panellogin left-panellogin'>
+            <div className='contentlogin'>
+              <h3>New here ?</h3>
+              <p>
+                Tum Jo Aaye Meri Website Mein Baat Ban Gayi Ishq Mazhab Ishq
+                Meri Zaat Ban Gayi!
+              </p>
+              <button
+                className='btnlogin transparentlogin'
+                id='sign-up-btnlogin'
+                onClick={toggleswitch}
+                >
+                Sign up
+              </button>
+            </div>
           </div>
-         
+          <div className='panellogin right-panellogin'>
+            <div className='contentlogin'>
+              <h3>One of us ?</h3>
+              <p>
+                Kundi mat khadkao raja Seedha login karo raja Phool bicha
+                perfume laga ke Mood banao taaja taaja
+              </p>
+              <button
+                className='btnlogin transparentlogin'
+                id='sign-in-btnlogin'
+                onClick={toggleswitch}
+                >
+                Sign in
+              </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-
     </>
-  )
-}
+  );
+};
 
-export default Loginpage
+export default Loginpage;

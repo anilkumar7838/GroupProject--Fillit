@@ -2,7 +2,7 @@ import React from "react";
 import "./registrationPage.css";
 const RegistrationPage = () => {
   return (
-    <>
+    <div className="form-container">
       <div class="wrapper">
         <div class="title">Registration Form</div>
         <div class="form">
@@ -60,7 +60,7 @@ const RegistrationPage = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
